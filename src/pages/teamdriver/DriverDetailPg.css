@@ -1,0 +1,30 @@
+.driverdetail-layout {
+  padding-top: 48px;
+}
+
+.stat-item {
+  margin-bottom: 20px; /* 항목 간 간격 */
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between; /* 글자는 왼쪽, 점수는 오른쪽 */
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+
+/* 그래프 배경 (진한 회색) */
+.progress-bg {
+  width: 100%;
+  height: 6px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+/* 실제 차오르는 바 (빨간색) */
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #8a1313, #e10600); /* 페라리 레드 */
+  border-radius: 3px;
+  transition: width 0.5s ease-in-out; /* 게이지 차오르는 애니메이션 */
+}

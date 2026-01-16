@@ -1,0 +1,470 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-size: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+img {
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+li {
+  list-style: none;
+}
+address,
+em,
+i {
+  font-style: normal;
+}
+a:focus {
+  outline: none;
+}
+button:focus {
+  outline: none;
+}
+
+/* layout */
+body {
+  background: #080808;
+}
+.content-area .button {
+  text-align: left;
+}
+
+.content-area .button button {
+  margin-top: 45px;
+  color: #eaeaea;
+  font-weight: 500;
+  font-size: 20px;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  padding: 10px 12px 12px 17px;
+
+  background-image: linear-gradient(to bottom, #484651, #2d2c33),
+    /* 내부 배경 */
+      linear-gradient(
+        135deg,
+        rgba(57, 74, 150, 0) 0%,
+        rgba(57, 74, 150, 0.3) 40%,
+        rgba(57, 74, 150, 0.8) 50%,
+        rgba(57, 74, 150, 0.3) 60%,
+        rgba(57, 74, 150, 0) 100%
+      );
+}
+.content-area .button .year {
+  margin-right: 17px;
+}
+
+.content-area h2 {
+  font-family: "Juventus Fans", sans-serif;
+  font-size: 44px;
+  color: #eaeaea;
+  text-align: left;
+  margin: 50px 0 68px 0;
+}
+
+.driverlist {
+  width: 100%;
+}
+
+.driverlist ul {
+  width: 90%;
+}
+
+.driverlist ul li {
+  position: relative;
+  width: 390px;
+  height: 212px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  border-radius: 10px;
+  align-items: center;
+  margin-bottom: 35px;
+  /* 배경 css */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.driverlist ul li .driver-info {
+  width: 100%;
+  height: 100%;
+  padding: 0 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+/* 홀수 */
+.driverlist ul li:nth-child(odd) .driver-info {
+  flex-direction: row;
+}
+/* 짝수 */
+.driverlist ul li:nth-child(even) .driver-info {
+  flex-direction: row-reverse;
+}
+
+.driverlist ul li .driver-info .text-box {
+  margin-top: 80px;
+}
+.driverlist ul li:nth-child(odd) .driver-info .text-box {
+  width: 56.4%;
+  flex-shrink: 0; /* ← li 기준으로 폭 유지 */
+  text-align: left;
+}
+.driverlist ul li:nth-child(even) .driver-info .text-box {
+  width: 55%;
+  flex-shrink: 0; /* ← li 기준으로 폭 유지 */
+  text-align: right;
+}
+
+.driverlist .driver-info .text-box h3 {
+  font-size: 35px;
+  font-family: "Juventus Fans", sans-serif;
+  line-height: 130%;
+}
+.driverlist .driver-info .text-box p {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+  line-height: 130%;
+  font-weight: 300;
+}
+
+.driver-img img {
+  margin-top: 31px;
+}
+.driverlist ul li:nth-child(odd) .driver-info .driver-img {
+  width: 44%;
+  flex-shrink: 0;
+}
+.driverlist ul li:nth-child(even) .driver-info .driver-img {
+  width: 44%;
+  flex-shrink: 0;
+}
+
+.favorite-btn {
+  color: #e5e5e5;
+  opacity: 20%;
+  position: absolute;
+  top: 6%;
+  right: 19px;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background: transparent;
+  color: white;
+
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+
+  display: flex; /* flex로 정렬 */
+  justify-content: center; /* 가로 중앙 */
+  align-items: center; /* 세로 중앙 */
+
+  line-height: normal; /* line-height 제거 */
+}
+
+/* 배경 이미지 */
+.driverlist ul li[class^="ferrari"] {
+  background-image: linear-gradient(
+    135deg,
+    rgba(137, 52, 63, 0) 0%,
+    /* 0% 위치: 투명 */ rgba(137, 52, 63, 0.3) 40%,
+    /* 40% 위치: 30% 불투명도 */ rgba(137, 52, 63, 0.8) 50%,
+    /* 50% 위치: 80% 불투명도 - 가장 진함 */ rgba(137, 52, 63, 0.3) 60%,
+    /* 60% 위치: 30% 불투명도 */ rgba(137, 52, 63, 0) 100% /* 100% 위치: 투명 */
+  );
+}
+.driverlist ul li.ferrari_1 {
+  background-image: url("../../assets/teamdriver/ferrari_bg_1.png");
+}
+.driverlist ul li.ferrari_2 {
+  background-image: url("../../assets/teamdriver/ferrari_bg_2.png");
+}
+.driverlist ul li[class^="redbull"] {
+  background-image: linear-gradient(#121212, #121212),
+    linear-gradient(
+      135deg,
+      rgba(57, 74, 150, 0) calc(var(--shine-pos) - 20%),
+      rgba(57, 74, 150, 0.3) calc(var(--shine-pos) - 10%),
+      rgba(57, 74, 150, 0.8) var(--shine-pos),
+      rgba(57, 74, 150, 0.3) calc(var(--shine-pos) + 10%),
+      rgba(57, 74, 150, 0) calc(var(--shine-pos) + 20%)
+    );
+}
+.driverlist ul li.redbull_1 {
+  background-image: url("../../assets/teamdriver/redbull_bg_1.png");
+}
+.driverlist ul li.redbull_2 {
+  background-image: url("../../assets/teamdriver/redbull_bg_2.png");
+}
+.driverlist ul li[class^="mercedes"] {
+  background-image: linear-gradient(
+    135deg,
+    rgba(72, 215, 231, 0) 0%,
+    rgba(72, 215, 231, 0.3) 40%,
+    rgba(72, 215, 231, 0.8) 50%,
+    rgba(72, 215, 231, 0.3) 60%,
+    rgba(72, 215, 231, 0) 100%
+  );
+}
+.driverlist ul li.mercedes_1 {
+  background-image: url("../../assets/teamdriver/mercedes_bg_1.png");
+}
+.driverlist ul li.mercedes_2 {
+  background-image: url("../../assets/teamdriver/mercedes_bg_2.png");
+}
+.driverlist ul li[class^="mclaren"] {
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 135, 44, 0) 0%,
+    rgba(255, 135, 44, 0.3) 40%,
+    rgba(255, 135, 44, 0.8) 50%,
+    rgba(255, 135, 44, 0.3) 60%,
+    rgba(255, 135, 44, 0) 100%
+  );
+}
+.driverlist ul li.mclaren_1 {
+  background-image: url("../../assets/teamdriver/mclaren_bg_1.png");
+}
+.driverlist ul li.mclaren_2 {
+  background-image: url("../../assets/teamdriver/mclaren_bg_2.png");
+}
+.driverlist ul li[class^="racingbull"] {
+  background-image: linear-gradient(
+    135deg,
+    rgba(215, 221, 236, 0) 0%,
+    rgba(215, 221, 236, 0.3) 40%,
+    rgba(215, 221, 236, 0.8) 50%,
+    rgba(215, 221, 236, 0.3) 60%,
+    rgba(215, 221, 236, 0) 100%
+  );
+}
+.driverlist ul li.racingbull_1 {
+  background-image: url("../../assets/teamdriver/racingbull_bg_1.png");
+}
+.driverlist ul li.racingbull_2 {
+  background-image: url("../../assets/teamdriver/racingbull_bg_2.png");
+}
+.driverlist ul li[class^="alpin"] {
+  background-image: linear-gradient(
+    135deg,
+    rgba(213, 81, 156, 0) 0%,
+    rgba(213, 81, 156, 0.3) 40%,
+    rgba(213, 81, 156, 0.8) 50%,
+    rgba(213, 81, 156, 0.3) 60%,
+    rgba(213, 81, 156, 0) 100%
+  );
+}
+.driverlist ul li.alpin_1 {
+  background-image: url("../../assets/teamdriver/alpin_bg_1.png");
+}
+.driverlist ul li.alpin_2 {
+  background-image: url("../../assets/teamdriver/alpin_bg_2.png");
+}
+.driverlist ul li[class^="hass"] {
+  background-image: linear-gradient(
+    135deg,
+    rgba(167, 169, 173, 0) 0%,
+    rgba(167, 169, 173, 0.3) 40%,
+    rgba(167, 169, 173, 0.8) 50%,
+    rgba(167, 169, 173, 0.3) 60%,
+    rgba(167, 169, 173, 0) 100%
+  );
+}
+.driverlist ul li.hass_1 {
+  background-image: url("../../assets/teamdriver/hass_bg_1.png");
+}
+.driverlist ul li.hass_2 {
+  background-image: url("../../assets/teamdriver/hass_bg_2.png");
+}
+.driverlist ul li[class^="aston"] {
+  background-image: linear-gradient(
+    135deg,
+    rgba(22, 177, 172, 0) 0%,
+    rgba(22, 177, 172, 0.3) 40%,
+    rgba(22, 177, 172, 0.8) 50%,
+    rgba(22, 177, 172, 0.3) 60%,
+    rgba(22, 177, 172, 0) 100%
+  );
+}
+.driverlist ul li.aston_1 {
+  background-image: url("../../assets/teamdriver/aston_bg_1.png");
+}
+.driverlist ul li.aston_2 {
+  background-image: url("../../assets/teamdriver/aston_bg_2.png");
+}
+.driverlist ul li[class^="williams"] {
+  background-image: linear-gradient(
+    135deg,
+    rgba(99, 137, 249, 0) 0%,
+    rgba(99, 137, 249, 0.3) 40%,
+    rgba(99, 137, 249, 0.8) 50%,
+    rgba(99, 137, 249, 0.3) 60%,
+    rgba(99, 137, 249, 0) 100%
+  );
+}
+.driverlist ul li.williams_1 {
+  background-image: url("../../assets/teamdriver/williams_bg_1.png");
+}
+.driverlist ul li.williams_2 {
+  background-image: url("../../assets/teamdriver/williams_bg_2.png");
+}
+.driverlist ul li[class^="kicksauber"] {
+  background-image: linear-gradient(
+    135deg,
+    rgba(29, 132, 30, 0) 0%,
+    rgba(29, 132, 30, 0.3) 40%,
+    rgba(29, 132, 30, 0.8) 50%,
+    rgba(29, 132, 30, 0.3) 60%,
+    rgba(29, 132, 30, 0) 100%
+  );
+}
+.driverlist ul li.kicksauber_1 {
+  background-image: url("../../assets/teamdriver/kicksauber_bg_1.png");
+}
+.driverlist ul li.kicksauber_2 {
+  background-image: url("../../assets/teamdriver/kicksauber_bg_2.png");
+}
+/* 네비 버튼  */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  background-color: #080808;
+}
+.top-section {
+  width: 100%;
+  height: 150px;
+  background-color: #080808;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 탭 메뉴를 150px 영역의 하단에 배치 */
+  z-index: 10;
+}
+
+.tab-container {
+  width: 100%;
+}
+
+.tab-menu {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 13px;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding-bottom: 12px;
+  color: #eaeaea;
+  font-family: "Juventus Fans", sans-serif;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.tab-item.active {
+  color: #eaeaea;
+}
+
+.tab-indicator-wrapper {
+  position: relative;
+  height: 4px; /* 스트로크 두께 */
+}
+
+.base-line {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #cccccc;
+}
+
+.active-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  background-color: #cd1c10;
+  transition: all 0.3s ease;
+}

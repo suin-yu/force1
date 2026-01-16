@@ -1,0 +1,28 @@
+/* .wrap 안에 있는 container 스타일 */
+.wrap .splash-container {
+  height: 100vh; /* 화면 전체 높이 */
+  display: flex;
+  flex-direction: column; /* 👈 핵심 1: 위아래(세로)로 쌓기 */
+  justify-content: center; /* 👈 핵심 2: 세로 중앙 정렬 */
+  align-items: center; /* 👈 핵심 3: 가로 중앙 정렬 */
+  color: white; /* 👈 글자색 흰색 (검정 배경이니까!) */
+  padding: 404px 0 452px;
+}
+
+/* 로고 스타일 */
+.splash-logo {
+  width: 200px;
+  height: auto;
+  margin-top: 14px;
+}
+
+/* (선택사항) 글자 스타일도 좀 더 예쁘게 */
+.splash-container p {
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: -0.4%;
+}
+
+.splash-container p span {
+  color: #cd1c10;
+}
