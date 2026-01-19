@@ -4,8 +4,7 @@
 .chatbot-btn-container {
     position: fixed;
     right: 20px;
-    bottom: 210px;
-    /* Chatbot specific position */
+    bottom: 220px;
     width: 66px;
     height: 66px;
     border-radius: 50%;
@@ -25,14 +24,12 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    padding: 2px;
-
+    padding: 1.5px;
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-
     pointer-events: none;
     z-index: 1;
 }
@@ -48,18 +45,16 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     background: linear-gradient(135deg,
             transparent 45%,
             rgba(255, 255, 255, 0.5) 50%,
             transparent 53%);
-
     filter: blur(0px);
 }
 
 /* 클릭 시에만 1회 회전 */
 .chatbot-btn-container.active-glow .chatbot-border-glow::before {
-    animation: rotateDiagonal 1.2s linear 1 forwards;
+    animation: rotateChatbotDiagonal 1.2s linear 1 forwards;
 }
 
 /* ========================================= */
@@ -70,11 +65,10 @@
     width: calc(100% - 2px);
     height: calc(100% - 2px);
     border-radius: 50%;
-
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(0px);
+    background: rgba(0, 0, 0, 0.12);
+    /* 약간의 투명도 있는 배경 */
+    backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(0px);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,28 +80,26 @@
 /* ========================================= */
 .chatbot-inner img {
     object-fit: contain;
-
     filter: none !important;
     -webkit-filter: none !important;
     box-shadow: none !important;
     outline: none !important;
-
     image-rendering: -webkit-optimize-contrast;
     transform: translateZ(0);
     opacity: 1;
     z-index: 1000;
 }
 
-/* 챗봇 아이콘 크기 */
+/* Chatbot 아이콘 크기 (TopBtn과 동일) */
 .chatbot-inner img.icon-chatbot {
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
 }
 
 /* ========================================= */
 /* 회전 애니메이션 */
 /* ========================================= */
-@keyframes rotateDiagonal {
+@keyframes rotateChatbotDiagonal {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
     }

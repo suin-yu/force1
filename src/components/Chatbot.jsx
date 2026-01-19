@@ -16,7 +16,7 @@ const Chatbot = () => {
 
         // Navigate with delay
         setTimeout(() => {
-            navigate('/ChatbotPg');
+            navigate('/chatbot');
         }, 300);
     };
 

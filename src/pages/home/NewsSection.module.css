@@ -1,0 +1,156 @@
+.newsSection {
+    position: relative;
+    width: 100%;
+    /* margin-bottom: 100px; */
+    /* Removed margin since it's full screen */
+    height: 100vh;
+    /* Full viewport height */
+    color: #fff;
+    font-family: var(--font-main);
+    overflow: hidden;
+}
+
+.header {
+    position: absolute;
+    top: 30px;
+    /* Safe area from top */
+    left: 20px;
+    z-index: 10;
+    margin-bottom: 0;
+}
+
+.sectionTitle {
+    font-family: var(--font-title);
+    font-size: 50px;
+    margin: 0;
+    line-height: 1;
+}
+
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* Fill the section */
+    aspect-ratio: auto;
+    max-height: none;
+    overflow: hidden;
+}
+
+.sliderTrack {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slideItem {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    isolation: isolate;
+}
+
+.newsImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gradient & Content */
+.contentOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    padding-bottom: 80px;
+    /* Reduced specific bottom padding, handling it with flex */
+}
+
+/* Text Container with Border */
+/* Text Container with Border Image */
+.textBox {
+    position: relative;
+    z-index: 2;
+    width: 76%;
+    transform: translate(-4.5%, -10%);
+    /* Fixed width for uniformity */
+    margin-left: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    /* Ensure flex for child alignment if needed */
+    /* Removed padding/border from here, moving structure to children */
+}
+
+.boxBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    /* Stretch to fill */
+    z-index: -1;
+}
+
+.textContent {
+    padding: 40px 40px 17px 0px;
+    /* Extra padding visual balance */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.subTitle {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.mainTitle {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: pre-line;
+    margin: 0 0 16px 0;
+    color: #fff;
+}
+
+.date {
+    font-size: 14px;
+    color: #ddd;
+    font-weight: 400;
+    margin-left: 24px;
+}
+
+.navBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    color: white;
+    padding: 10px;
+    opacity: 0.8;
+    /* Increased opacity */
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBtn:hover {
+    opacity: 1;
+}
+
+/* Adjust svg size if needed, but 48px is fine. stroke-width handled in JSX or strict override here */
+.navBtn svg path {
+    stroke-width: 1px;
+    /* Thinner stroke as per image */
+}

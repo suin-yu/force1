@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Chatbot.css';
-import chatbotImg from "../../assets/img/home/chatbot.png";
+import './ChatbotBtn.css';
+import chatbotImg from '../../assets/img/home/chatbot.png'; // Adjusted path based on find_by_name result
 
-const Chatbot = () => {
+const ChatbotBtn = () => {
     const [isActive, setIsActive] = useState(false);
     const navigate = useNavigate();
 
-
     const handleClick = () => {
         setIsActive(true);
-
         // Reset glow effect
         setTimeout(() => setIsActive(false), 1200);
 
         // Navigate with delay
         setTimeout(() => {
-            navigate('/ChatbotPg');
+            navigate('/chatbot');
         }, 300);
     };
 
@@ -37,4 +35,4 @@ const Chatbot = () => {
     );
 };
 
-export default Chatbot;
+export default ChatbotBtn;

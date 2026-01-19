@@ -1,0 +1,111 @@
+.section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Anton', sans-serif;
+    font-size: 94px;
+    line-height: 1.1;
+    transform: translateY(-55%);
+    color: #fff;
+    margin: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.animate .line {
+    animation: slideUpFadeIn 0.8s ease-out forwards;
+}
+
+/* Animations */
+@keyframes slideUpFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Emoji Particles */
+.emojiContainer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+    /* Emojis float ABOVE text as requested */
+    overflow: hidden;
+}
+
+.emoji {
+    position: absolute;
+    bottom: -150px;
+    /* Start further down */
+    /* Start below screen */
+    object-fit: contain;
+    animation-name: floatUp;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Smooth explosive ease-out */
+    will-change: transform, opacity;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0);
+        opacity: 0;
+        bottom: 10%;
+        /* Start slightly visible */
+    }
+
+    10% {
+        opacity: 1;
+        /* Fade in quickly */
+        transform: translateY(-5vh) translateX(0) rotate(0) scale(1.2);
+        /* Pop up and oversize slightly */
+    }
+
+    100% {
+        /* Move way up and spread */
+        bottom: 140%;
+        transform: translateX(var(--x-offset)) rotate(var(--rotate)) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Specific styling for masking effect */
+.title span:nth-child(1) {
+    color: rgba(255, 255, 255, 0.3);
+    /* Faded top */
+}
+
+.title span:nth-child(2) {
+    color: rgba(255, 255, 255, 0.6);
+    /* Semi-faded middle */
+}
+
+.title span:nth-child(3) {
+    color: #fff;
+    /* Bright bottom */
+    font-size: 120px;
+    /* Emphasize 'we go!' */
+}

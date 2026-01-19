@@ -1,0 +1,216 @@
+.pageContainer {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    /* Very light gray bg */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-family: var(--font-main);
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    height: 60px;
+    background-color: #1B2D45;
+    /* Navy bg */
+    display: flex;
+    align-items: center;
+    padding: 80px 20px 40px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.backBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backIcon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transform: rotate(-90deg);
+    /* � Top button rotated -90deg to point Left */
+}
+
+.headerTitle {
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 8px;
+    margin-bottom: 4px;
+}
+
+/* Scrollable Content */
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 20px 120px;
+    /* Bottom padding for input area */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Introduction */
+.introSection {
+    margin-bottom: 20px;
+}
+
+.introTitle {
+    font-size: 22px;
+    /* Fixed typo 'dpx' to 22px */
+    font-weight: 700;
+    color: #1B2D45;
+    margin-bottom: 8px;
+}
+
+.introSub {
+    font-size: 14px;
+    color: #8899A6;
+    margin-bottom: 16px;
+}
+
+/* Chips */
+.chipContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.chip {
+    padding: 8px 16px;
+    background-color: #EBF1F5;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    color: #6E7F91;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Chat Messages */
+.messageList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.messageRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    /* Increased gap from 10px to 16px for clear separation */
+    max-width: 85%;
+}
+
+.botRow {
+    align-self: flex-start;
+    flex-direction: column;
+}
+
+.userRow {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    margin-bottom: -30px;
+    z-index: 10;
+}
+
+.bubble {
+    padding: 16px 16px;
+    border-radius: 16px;
+    /* rounded-2xl */
+    font-size: 15px;
+    line-height: 1.5;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+.botBubble {
+    background-color: #EBF1F5;
+    /* Light gray/blue */
+    color: #1B2D45;
+    border-top-left-radius: 4px;
+    /* Slight distinct shape */
+}
+
+.userBubble {
+    background-color: #2C4361;
+    /* Navy */
+    color: white;
+    border-top-right-radius: 4px;
+}
+
+/* Input Area */
+.inputArea {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px 24px;
+    background-color: #F0F2F5;
+    /* Match page bg or transparent gradient? plain is safer */
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.inputWrapper {
+    flex: 1;
+    background-color: white;
+    border-radius: 30px;
+    /* rounded-full */
+    padding: 4px 6px 4px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #1B2D45;
+    background: transparent;
+    padding: 10px 0;
+}
+
+.input::placeholder {
+    color: #AAB8C2;
+}
+
+.sendBtn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    /* Changed from navy to transparent to show image */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.sendIcon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Removed filter to show original image colors */
+}
