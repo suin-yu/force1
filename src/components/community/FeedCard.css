@@ -1,134 +1,657 @@
-/* Post Feed */
-.post-feed {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+/* src/components/community/FeedCard.css */
+
+.feedCard{
+    padding: 40px 16px;
+    border-bottom: 8px solid #1a1a1a;
 }
 
-/* 카드 */
-.post-card {
-  background: #0b0b0b;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-/* 헤더 */
-.post-head {
-  padding: 14px 14px 8px;
-}
-
-.post-user {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.post-avatar {
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.post-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.post-user-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.post-nick {
-  color: #eaeaea;
+.feedTitle{
+  margin: 0 0 12px;
+  color: #EAEAEA;
+  font-family: Roboto;
+  font-size: 24px;
   font-weight: 700;
-  font-size: 13px;
+  line-height: 130%;
+  letter-spacing: -0.48px;
+  margin-bottom: 28px;
 }
 
-.post-time {
-  color: rgba(234, 234, 234, 0.6);
-  font-size: 12px;
-}
-
-/* 본문 */
-.post-body {
-  padding: 0 14px 12px;
-}
-
-.post-title {
-  margin: 0 0 6px;
-  color: #eaeaea;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.post-content {
-  margin: 0;
-  color: rgba(234, 234, 234, 0.78);
-  font-size: 12.5px;
-  line-height: 1.6;
-  white-space: pre-line; /* \n 줄바꿈 */
-}
-
-/* 미디어 */
-.post-media img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-/* 액션 */
-.post-actions {
-  padding: 10px 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.post-counts {
-  display: flex;
-  gap: 12px;
-  color: rgba(234, 234, 234, 0.75);
-  font-size: 12px;
-}
-
-/* 댓글 */
-.post-comments {
-  padding: 10px 14px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.comment-row {
-  padding-top: 6px;
-}
-
-.comment-top {
-  display: flex;
+.metaRow{
+  display:flex;
+  align-items:center;
   gap: 8px;
+  margin-bottom: 12px;
+}
+
+.metaInfo {
+  display: flex;
   align-items: center;
-  margin-bottom: 4px;
+  gap: 6px;
 }
 
-.comment-nick {
-  color: #eaeaea;
-  font-weight: 700;
-  font-size: 12px;
+.avatar{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  object-fit: cover;
+  background: rgba(255,255,255,0.12);
 }
 
-.comment-time {
-  color: rgba(234, 234, 234, 0.6);
-  font-size: 11px;
+.nickname, .time{
+  color:#767676;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -0.28px;
 }
 
-.comment-text {
-  color: rgba(234, 234, 234, 0.78);
-  font-size: 12px;
-  line-height: 1.5;
+.time{ margin-left: 0; /* reset margin since we use gap now */ }
+
+.followBtn {
+  position: relative; /* Context for pseudo */
+  margin-left: auto; 
+  padding: 8px 18px;
+  border-radius: 99px;
+  background: linear-gradient(105deg, rgba(72, 70, 81, 0.40) 0%, rgba(45, 44, 51, 0.40) 100%);
+  border: none; /* Remove existing border */
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.26px;
+  line-height: 100%;;
+  cursor: pointer;
+  z-index: 1; /* Context for nested elements */
+}
+
+/* Glass Mask Border for FollowBtn */
+.followBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit; /* Follow parent radius */
+  padding: 1.3px; 
+  z-index: -1; /* Behind text */
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.3) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.dot {
+  margin: 0;
+  color: #767676; /* Match context color */
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.feedBody{
+  margin: 0 0 32px;
   white-space: pre-line;
+  color:#d9d9d9;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.32px;
 }
+
+/* media */
+.mediaSingle{
+  position: relative;
+  overflow: hidden;
+}
+.mediaSingle img{
+  width:100%;
+  display:block;
+}
+.mediaOverlay{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.3);
+}
+
+/* simple grid preview (max 3) */
+.mediaGrid{
+  display:grid;
+  gap: 1px; /* User requested 1px gap */
+}
+.mediaGrid.count-2{
+  grid-template-columns: 1fr 1fr;
+}
+.mediaGrid.count-3{
+  grid-template-columns: 220px 162px;
+  grid-template-rows: 110px 109px;
+}
+.mediaGrid.count-3 .mediaCell:first-child{
+  grid-row: 1 / span 2;
+}
+/* Removed auto-rows since we defined template rows */
+
+.mediaCell{
+  position: relative;
+  overflow:hidden;
+}
+.mediaCell img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+.moreOverlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+/* actions */
+.actionRow{
+  padding: 0 8px;
+  margin-top: 12px;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+}
+.actionLeft{
+  display:flex;
+  gap: 16px;
+  align-items:center;
+}
+.actionItem{
+  display:flex;
+  align-items:center;
+  gap: 6px;
+}
+.count{
+  color:#AFAFAF;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+/* icon placeholders (replace with svg later) */
+/* icon placeholders */
+.icon{
+  display:inline-block;
+  /* background: rgba(255,255,255,0.18); removed placeholder bg if user wants just icon, but if they want button generic style keep it. User said "insert icon...". Usually means replace. */
+  background-color: transparent; /* Assuming user wants just the icon now? Or maybe icon inside box? */
+  /* Re-reading: The previous code had background and border-radius. If I put an SVG, it replaces the content. */
+  /* The size is small (22px). */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon.heart{ 
+  margin-right: 1px;
+  width:22px; height:23px;
+  background-image: url(../../assets/img/community/post/icon_heart.svg);
+}
+.icon.heart.on {
+  background-image: url(../../assets/img/community/post/icon_heart_fill.svg);
+}
+.icon.chat{ 
+  width:24px; height:24px;
+  background-image: url(../../assets/img/community/post/icon_chat.svg);
+}
+.icon.chat.on{
+  background-image: url(../../assets/img/community/post/icon_chat_fill.svg);
+}
+.icon.share{ 
+  width:22px; height:22px;
+  background-image: url(../../assets/img/community/post/icon_share.svg);
+}
+.icon.share.on{
+  background-image: url(../../assets/img/community/post/icon_share_fill.svg);
+}
+.icon.book{ 
+  width:24px; height:19px;
+  background-image: url(../../assets/img/community/post/icon_book.svg);
+}
+.icon.book.on{
+  background-image: url(../../assets/img/community/post/icon_book_fill.svg);
+}
+
+.actionRight{
+  display:flex;
+  gap: 6px;
+  align-items:center;
+}
+
+/* poll */
+.pollBox, .pollItem, .pollRadio {
+  position: relative;
+  /* background: handled individually */
+}
+
+.pollBox{
+  padding: 40px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12); 
+  /* border removed */
+}
+
+/* Glass Mask Border */
+.pollBox::before, .pollRadio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.3px; 
+  z-index: 0; 
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.3) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.pollItem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.3px; 
+  z-index: 0; 
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.3) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.pollHeader {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.pollTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+}
+.pollMeta {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+}
+.icon.chart {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../assets/img/community/post/icon_chart.svg);
+}
+
+.pollItem{ 
+  margin-bottom: 12px; 
+  height: 60px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+/* Ensure content is above mask */
+.pollItem > * {
+  position: relative;
+  z-index: 1;
+}
+
+.pollBar {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 100%;
+  z-index: 0; /* content background */
+}
+/* Move pollFill to z-index 0 or 1? If it's pure background, 0 is fine, but PollItem has z-index 1 for children. 
+   pollBar is a child. So pollBar is z-1? But pollBar should be behind text?
+   Yes. pollLabelOption is z-1. pollBar is z-0 inside pollItem.
+   Wait, pollItem > * sets all to z-1. I should override for pollBar if needed.
+   But pollBar is positioned absolute. Let's precise.
+*/
+
+.pollFill{ 
+  height: 100%;
+  background: transparent; 
+}
+.pollLabelOption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 600;
+}
+.pollRadio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.50);
+}
+.pollRadio.on {
+  background: #F00;
+}
+
+/* Comments */
+.commentSection {
+  padding: 0 8px 0; 
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+  align-self: stretch;
+  transition: height 0.3s ease; /* Optional: smooth transition if user wants, but strict requirement didn't specify. Adding for UX. */
+}
+.commentSection.open {
+  height: auto;
+  padding: 40px 8px 0;
+}
+
+.commentItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
+  padding: 10px 0;
+}
+
+.commentText.small {
+  width: 256px;
+}
+
+.commentGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1; /* Ensure it takes available space so like button pushes right if needed, though user didn't specify space-between for item. Assuming standard left flow but let's stick to provided CSS + structure. */
+}
+
+.commentAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #333;
+  flex-shrink: 0;
+}
+
+.commentAvatar.small {
+  width: 28px;
+  height: 28px;
+}
+
+.commentContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.commentHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.commentNick {
+  color: #767676;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.28px;
+}
+
+.commentTime {
+  color: #767676;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.28px;
+}
+
+.commentText {
+  width: 295px;
+  color: #d9d9d9;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+  letter-spacing: -0.28px;
+  white-space: pre-line;
+  margin: 0 0 12px;
+}
+
+.replyBtn {
+  color: #AFAFAF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 15.6px */
+  letter-spacing: -0.24px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.commentLikeBtn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.icon.heart.small {
+  width: 19px;
+  height: 20px;
+  /* Re-use existing heart icon but smaller */
+  background-image: url(../../assets/img/community/post/icon_heart.svg);
+}
+.icon.heart.small.on {
+  background-image: url(../../assets/img/community/post/icon_heart_fill.svg);
+}
+
+/* More Menu Overlay */
+.more-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.more-menu {
+    background-color: #080808;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 24px 20px 80px; /* Safe area padding at bottom */
+    width: 100%;
+    box-sizing: border-box;
+    animation: slideUp 0.3s ease-out;
+    position: relative;
+    max-width: 430px; /* Constrain on desktop */
+    margin: 0 auto;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+.more-handle {
+    width: 100px;
+    height: 3px;
+    background-color: #eaeaea;
+    border-radius: 2px;
+    margin: 0 auto 30px; 
+}
+
+.more-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.more-action-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    cursor: pointer;
+    color: #EAEAEA;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.more-action-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Delete Confirmation Overlay */
+.delete-confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% opacity backdrop */
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.delete-confirm-box {
+    width: 390px;
+    padding: 40px 80px;
+    border-radius: 20px;
+    background: #000; /* Dark box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: popIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.delete-icon-wrapper img {
+    width: 56px;
+    height: 56px;
+}
+
+.delete-confirm-box p {
+    color: #EEE;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.delete-btn-group {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+}
+
+.btn-cancel {
+    flex: 1;
+    padding: 6px 0;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background: transparent;
+    color: #CCC;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    flex: 1;
+    padding: 6px 0;
+    border-radius: 8px;
+    border: none;
+    background: #CD1C10; /* Red */
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
