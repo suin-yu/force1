@@ -1,0 +1,248 @@
+/* Season Pick Page Container */
+.season-pick-container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+
+/* Header */
+.season-pick-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 16px;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    background: #000;
+    z-index: 100;
+}
+
+.back-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    transition: opacity 0.2s;
+}
+
+.back-button:hover {
+    opacity: 0.7;
+}
+
+.header-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -2%;
+}
+
+/* Title Section */
+.title-section {
+    padding: 20px 16px 30px;
+
+}
+
+.season-pick-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+
+}
+
+/* Driver Grid Section */
+.driver-grid-section {
+    padding: 0 16px;
+}
+
+.driver-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* Driver Card */
+.driver-card {
+    background: transparent;
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Driver Image */
+.driver-image-wrapper {
+    width: 165px;
+    height: 162px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.driver-image-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+
+.driver-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+/* Color Overlay */
+.color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+
+}
+
+/* Check Icon */
+.check-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 30px;
+    z-index: 3;
+    animation: checkAppear 0.3s ease;
+}
+
+@keyframes checkAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+
+/* Driver Info */
+.driver-info {
+    text-align: center;
+}
+
+.driver-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 4px 0;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -1%;
+}
+
+.driver-namekor {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -3%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 430px) {
+    .season-pick-title {
+        font-size: 36px;
+    }
+
+    .driver-grid {
+        gap: 12px;
+    }
+
+    .driver-card {
+        padding: 12px;
+    }
+
+    .driver-name {
+        font-size: 14px;
+    }
+
+    .driver-namekor {
+        font-size: 11px;
+    }
+}
+
+/* Bottom Action Area */
+.bottom-action-area {
+    /* position: fixed; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 430px;
+    /* margin: 0 auto; */
+    padding: 16px;
+    background: #000;
+    z-index: 50;
+}
+
+/* Action Button */
+.action-button {
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 8px;
+    background-color: #767676;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.action-button.active {
+    background-color: #CD1C10;
+}
+
+.action-button:hover {
+    opacity: 0.9;
+}
+
+.action-button:active {
+    transform: scale(0.98);
+}

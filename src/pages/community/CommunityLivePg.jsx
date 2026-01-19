@@ -1,3 +1,3 @@
 export default function CommunityLivePg() {
-  return <div>Live</div>;
+  return <p>Live</p>;
 }

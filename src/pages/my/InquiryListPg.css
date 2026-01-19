@@ -1,0 +1,253 @@
+.inquiry-list-container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    padding-bottom: 120px;
+}
+
+/* Header */
+.il-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+.il-header .back-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.il-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    margin: 0;
+    color: #fff;
+}
+
+/* Operating Hours Section */
+.operating-hours {
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 30px 0;
+}
+
+.hours-info {
+    font-size: 16px;
+    color: #fff;
+    line-height: 130%;
+    font-weight: 200;
+}
+
+
+/* New Inquiry Button */
+.new-inquiry-btn {
+    width: calc(100% - 40px);
+    margin: 0 20px 20px 20px;
+    padding: 15px;
+    background-color: #CD1C10;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.new-inquiry-btn:hover {
+    background-color: #a51610;
+}
+
+/* Inquiry List */
+.inquiry-list {
+    padding: 0 20px;
+}
+
+.inquiry-item {
+    position: relative;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.inquiry-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    padding: 0.5px;
+    background: linear-gradient(-35deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 30%,
+            rgba(255, 255, 255, 0.3) 40%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0.1) 60%,
+            rgba(255, 255, 255, 0) 90%,
+            rgba(255, 255, 255, 0) 100%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.inquiry-item:hover::before {
+    background: linear-gradient(-35deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 30%,
+            rgba(255, 255, 255, 0.4) 40%,
+            rgba(255, 255, 255, 0.7) 50%,
+            rgba(255, 255, 255, 0.2) 60%,
+            rgba(255, 255, 255, 0) 90%,
+            rgba(255, 255, 255, 0) 100%);
+}
+
+.inquiry-title {
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    margin: 0 0 10px 0;
+}
+
+.inquiry-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #999;
+}
+
+.inquiry-status {
+    font-weight: 200;
+}
+
+.inquiry-status.completed {
+    color: #f4f4f4;
+    opacity: 1;
+}
+
+.inquiry-status.pending {
+    color: #fff;
+    opacity: 0.5;
+}
+
+.inquiry-separator {
+    color: #fff;
+}
+
+.inquiry-author,
+.inquiry-date {
+    font-size: 14px;
+    color: #666;
+    font-weight: 450;
+    line-height: 130%;
+    letter-spacing: -2%;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.empty-state p {
+    font-size: 16px;
+}
+
+/* Load More Button */
+.load-more-btn {
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 14px;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+    color: #838383;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+/* .load-more-btn:hover {
+    color: #fff;
+} */
+
+/* FAQ Button */
+.faq-btn {
+    position: relative;
+    width: 240px;
+    height: 53px;
+    margin: 20px auto;
+    padding: 0;
+    background-color: #2D2D2D;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: block;
+}
+
+.faq-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    padding: 1px;
+    background: linear-gradient(-35deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 30%,
+            rgba(255, 255, 255, 0.3) 40%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0.1) 60%,
+            rgba(255, 255, 255, 0) 90%,
+            rgba(255, 255, 255, 0) 100%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.faq-btn:hover {
+    background-color: #3D3D3D;
+}
