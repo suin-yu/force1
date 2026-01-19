@@ -1,0 +1,24 @@
+{
+  "comments": [
+    { "id": 1, "name": "PitCrew", "msg": "이번 시즌 마지막 레이스라니 믿기지가 않네요...", "avatar": "/src/assets/img/community/post/PitCrew.png" },
+    { "id": 2, "name": "RedFlag", "msg": "아부다비의 석양은 언제 봐도 멋있음 🌆", "avatar": "/src/assets/img/community/post/RedFlag.png" },
+    { "id": 3, "name": "NorrisFan", "msg": "오늘 챔피언 결정되는 날인가요? 심장 떨림 ㄷㄷ", "avatar": "/src/assets/img/community/post/NorrisFan.png" },
+    { "id": 4, "name": "TurboMax", "msg": "맥라렌 막판 스퍼트 미쳤다", "avatar": "/src/assets/img/community/post/kim_maxmax.png" },
+    { "id": 5, "name": "SpeedLover", "msg": "페라리 제발 전략 실수만 하지 말자 제발", "avatar": "/src/assets/img/community/post/SpeedLover.png" },
+    { "id": 6, "name": "boxbox_f1", "msg": "야스 마리나 서킷 조명 들어오니까 진짜 예쁘네", "avatar": "/src/assets/img/community/post/boxbox_f1.png" },
+    { "id": 7, "name": "f1xpitt", "msg": "누가 우승하든 레전드 경기 나올 듯", "avatar": "/src/assets/img/community/post/f1xpitt.png" },
+    { "id": 8, "name": "bradpitbox", "msg": "첫 코너 사고만 조심하면 되는데...", "avatar": "/src/assets/img/community/post/bradpitbox.png" },
+    { "id": 9, "name": "formationlap", "msg": "노리스 오늘 컨디션 좋아 보이는데 우승 가자!", "avatar": "/src/assets/img/community/post/formationlap.png" },
+    { "id": 10, "name": "newbi_f1", "msg": "베르스타펜은 역시 베르스타펜이네... 압도적이다", "avatar": "/src/assets/img/community/post/newbi_f1.png" },
+    { "id": 11, "name": "bennzzz_24", "msg": "마지막 랩 불꽃놀이 빨리 보고 싶다 🎆", "avatar": "/src/assets/img/community/post/bennzzz_24.png" },
+    { "id": 12, "name": "pitlane_99", "msg": "해밀턴 이번 시즌 폼 진짜 좋았음", "avatar": "/src/assets/img/community/post/pitlane_99.png" },
+    { "id": 13, "name": "f1xpitt", "msg": "알본 오늘 포인트 따면 윌리엄스 대박인데", "avatar": "/src/assets/img/community/post/f1xpitt.png" },
+    { "id": 14, "name": "PitCrew", "msg": "피트 스탑 1.9초? 레드불 미친거 아님?", "avatar": "/src/assets/img/community/post/PitCrew.png" },
+    { "id": 15, "name": "RedFlag", "msg": "섹터 3에서 자꾸 미끄러지네 타이어 다 닳았나", "avatar": "/src/assets/img/community/post/RedFlag.png" },
+    { "id": 16, "name": "NorrisFan", "msg": "세이프티카 나오면 변수 생기겠다", "avatar": "/src/assets/img/community/post/NorrisFan.png" },
+    { "id": 17, "name": "SpeedLover", "msg": "컨스트럭터 챔피언십 누가 가져갈지 모르겠네", "avatar": "/src/assets/img/community/post/SpeedLover.png" },
+    { "id": 18, "name": "boxbox_f1", "msg": "신인들 패기가 장난 아니네 이번 시즌", "avatar": "/src/assets/img/community/post/boxbox_f1.png" },
+    { "id": 19, "name": "f1xpitt", "msg": "오늘 경기 끝나면 내년 3월까지 어떻게 기다림...", "avatar": "/src/assets/img/community/post/f1xpitt.png" },
+    { "id": 20, "name": "formationlap", "msg": "다들 한 시즌 동안 고생 많으셨습니다! F1 포에버", "avatar": "/src/assets/img/community/post/formationlap.png" }
+  ]
+}

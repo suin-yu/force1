@@ -4,34 +4,52 @@
       "id": "p_0001",
       "type": "text",
       "board": "free",
-      "title": "오늘 경기 뭐가 제일 웃겼냐",
-      "content": "난 팀 라디오가 제일 ㅋㅋ",
+      "title": "F1 굿즈 교환 원합니다.",
+      "content": "F1 굿즈 교환하려고 글 씁니다.\n페라리 빈티지 자켓인데 잘 안 입어서 교환하려고요!\nF1 관련 굿즈면 종류 크게 상관 없고 상태가 좋았으면 좋겠습니다. 편하게 댓글 부탁드립니다.",
       "author": {
         "id": "u_102",
-        "nickname": "pitlane_99",
-        "avatar": "/img/avatars/u_102.png",
+        "nickname": "@ Fanner1_98",
+        "avatar": "/src/assets/img/community/post/Fanner1_98.png",
         "badge": "Ferrari"
       },
-      "createdAt": "2026-01-14T14:10:00+09:00",
+      "createdAt": "5m",
       "updatedAt": null,
       "visibility": "public",
       "tags": ["#f1", "#경기", "#잡담"],
+      "media": [
+        { "kind": "image", "url": "/src/assets/img/community/post/post_1.png", "ratio": "3:4" }
+      ],
 
-      "media": [],
       "links": [],
       "meta": {},
 
-      "stats": { "like": 12, "comment": 4, "view": 231 },
+      "stats": { "like": 5, "comment": 3, "view": 231 },
       "isLiked": false,
       "isBookmarked": false,
 
       "comments": [
         {
           "id": "c_001",
-          "author": { "id": "u_201", "nickname": "Force_1" },
-          "content": "라디오 인정 ㅋㅋ",
-          "createdAt": "2026-01-14T14:12:00+09:00",
-          "like": 2,
+          "author": { "id": "u_205", "nickname": "@ f1xpitt", "avatar": "/src/assets/img/community/post/f1xpitt.png" },
+          "content": "페라리 빈티지 자켓 너무 이쁘네요..",
+          "createdAt": "2m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_002",
+          "author": { "id": "u_222", "nickname": "@ boxbox_f1", "avatar": "/src/assets/img/community/post/boxbox_f1.png" },
+          "content": "F1 굿즈 교환 희망합니다!!",
+          "createdAt": "3m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_003",
+          "author": { "id": "u_205", "nickname": "@ f1xpitt", "avatar": "/src/assets/img/community/post/f1xpitt.png" },
+          "content": "교환 대상 조건 따로 없으신가요?\n댓글로 안내해주시면 감사하겠습니다.",
+          "createdAt": "4m",
+          "like": 0,
           "replies": []
         }
       ]
@@ -41,105 +59,637 @@
       "id": "p_0002",
       "type": "image",
       "board": "gallery",
-      "title": "굿즈 자랑",
-      "content": "오늘 온 티셔츠 실물 미쳤다",
+      "title": "샤를과 페라리",
+      "content": "“만약 새장 안에 있다는 게 페라리와 함께하는 거라면,\n저는 그 안에 있는 것도 괜찮을 것 같아요.”\n\n하루 종일 깊이 생각중.\n이분, 진짜 페라리에 대한 애정이 남다른 듯.",
       "author": {
         "id": "u_305",
-        "nickname": "red_car",
-        "avatar": "/img/avatars/u_305.png",
+        "nickname": "@ Fanner1_98",
+        "avatar": "/src/assets/img/community/post/Fanner1_98.png",
         "badge": "Ferrari"
       },
-      "createdAt": "2026-01-14T15:00:00+09:00",
+      "createdAt": "24m",
       "visibility": "public",
-      "tags": ["#굿즈", "#페라리"],
-
+      "tags": ["#샤를", "#페라리"],
       "media": [
-        { "kind": "image", "url": "/img/posts/p_0002_1.jpg", "ratio": "1:1" },
-        { "kind": "image", "url": "/img/posts/p_0002_2.jpg", "ratio": "4:5" }
+        { "kind": "image", "url": "/src/assets/img/community/post/post_2_1.png", "ratio": "1:1" },
+        { "kind": "image", "url": "/src/assets/img/community/post/post_2_2.png", "ratio": "4:3" },
+        { "kind": "image", "url": "/src/assets/img/community/post/post_2_3.png", "ratio": "4:3" }
       ],
       "links": [],
       "meta": {},
 
-      "stats": { "like": 89, "comment": 21, "view": 1020 },
+      "stats": { "like": 15, "comment": 3, "view": 1020 },
       "isLiked": true,
       "isBookmarked": false,
-      "comments": []
+      "comments": [
+         {
+          "id": "c_2_1",
+          "author": { "id": "u_999", "nickname": "@ bradpitbox", "avatar": "/src/assets/img/community/post/bradpitbox.png" },
+          "content": "그래서 더 응원하게 되는 거겠지, 성적이랑 별개로",
+          "createdAt": "15m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_2_2",
+          "author": { "id": "u_205", "nickname": "@ f1xpitt", "avatar": "/src/assets/img/community/post/f1xpitt.png" },
+          "content": "이 정도면 팀에 대한 애정이 아니라 신념인 듯",
+          "createdAt": "20m",
+          "like": 0,
+          "replies": []
+        },
+        {
+           "id": "c_2_3",
+           "author": { "id": "u_888", "nickname": "@ RedFlag", "avatar": "/src/assets/img/community/post/RedFlag.png" },
+           "content": "페라리랑 샤를은 그냥 서사 그 자체임",
+           "createdAt": "22m",
+           "like": 0,
+           "replies": []
+        }
+      ]
     },
 
     {
       "id": "p_0003",
-      "type": "poll",
-      "board": "vote",
-      "title": "오늘의 드라이버 오브 더 데이",
-      "content": "누가 제일 잘했음?",
+      "type": "text",
+      "board": "free",
+      "title": "2025 R24 아부다비 GP 경기 분석",
+      "content": "이번 아부다비 경기는 전형적인 운영 싸움 경기였다고 봄.\n초반 스타트에서 큰 변수 없이 상위권이 정리됐고, 이후에는 사실상 피트 전략이 순위를 갈랐다고 봐도 무방함.\n중반에 언더컷 들어간 팀들이 확실히 이득을 봤고, 스틴트 길게 가져간 쪽은 후반 타이어 떨어지면서 포지션 지키기 바빴음.\nDRS 구간은 많았지만, 타이어 상태 안 좋으면 추월은 거의 불가능했음.\n\n결국 오늘 경기는 무리 안 한 드라이버, 피트 타이밍 깔끔했던 팀, 실수 없이 운영한 쪽이 포인트를 가져간 레이스였다고 생각함.\n\n개인적으로는 화끈한 역전은 없었지만 시즌 마지막 경기답게 전략 완성도 보는 재미는 있었던 경기였음.\n\n다들 이번 경기 어떻게 봤는지 궁금함.\n의견 있으면 댓글로 ㄱㄱ",
       "author": {
-        "id": "u_777",
-        "nickname": "stint_master",
-        "avatar": "/img/avatars/u_777.png",
+        "id": "u_999",
+        "nickname": "@ bradpitbox",
+        "avatar": "/src/assets/img/community/post/bradpitbox.png",
         "badge": "Neutral"
       },
-      "createdAt": "2026-01-14T18:30:00+09:00",
+      "createdAt": "40m",
       "visibility": "public",
-      "tags": ["#투표", "#DOTD"],
+      "tags": ["#F1", "#아부다비GP", "#경기분석"],
+      "media": [
+         { "kind": "image", "url": "/src/assets/img/community/post/post_3.png", "ratio": "16:9" }
+      ],
+      "links": [],
+      "meta": {},
 
+      "stats": { "like": 10, "comment": 3, "view": 888 },
+      "isLiked": false,
+      "isBookmarked": false,
+      "comments": [
+        {
+          "id": "c_3_1",
+          "author": { "id": "u_205", "nickname": "@ f1xpitt", "avatar": "/src/assets/img/community/post/f1xpitt.png" },
+          "content": "분석 공감함. 이번 레이스는 진짜 드라이버 실력보다는 팀 운영 차이가 더 크게 보였던 경기였던 듯. 언더컷 타이밍 잡은 팀들은 거의 계획대로 간 느낌이고, 스틴트 늘린 쪽은 후반에 너무 힘들어 보였음.",
+          "createdAt": "25m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_3_2",
+          "author": { "id": "u_700", "nickname": "@ formationlap", "avatar": "/src/assets/img/community/post/formationlap.png" },
+          "content": "화끈함은 부족했지만 말씀한 것처럼 전략 보는 재미는 확실히 있었던 경기였다고 봄. 실수 없이 운영한 팀이 포인트 챙기는, 딱 아부다비다운 마무리였던 듯.",
+          "createdAt": "42m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_3_3",
+          "author": { "id": "u_102", "nickname": "@ Fanner1_98", "avatar": "/src/assets/img/community/post/Fanner1_98.png" },
+          "content": "맞음 ㅇㅇ 아부다비는 원래 한 번 흐름 타면 뒤집기 힘든 트랙이라 이날은 특히 운영 실수 하나가 바로 성적 갈린 경기였던 듯. 시즌 마지막답게 리스크 최소화한 팀들이 웃은 레이스였다고 봄.",
+          "createdAt": "40m",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        }
+      ]
+    },
+
+    {
+      "id": "p_0004",
+      "type": "text",
+      "board": "free",
+      "title": "애증의 팀.. 페라리",
+      "content": "우승이 전부는 아닌 팀도 있다는 걸\n페라리가 계속 증명하는 느낌.\n\n그래서 욕하면서도, 또 보게 됨.",
+      "author": {
+        "id": "u_102",
+        "nickname": "@ Fanner1_98",
+        "avatar": "/src/assets/img/community/post/Fanner1_98.png",
+        "badge": "Ferrari"
+      },
+      "createdAt": "45m",
+      "visibility": "public",
+      "tags": ["#샤를", "#페라리", "#F1"],
+      "media": [
+        { "kind": "image", "url": "/src/assets/img/community/post/post_4.png", "ratio": "4:5" }
+      ],
+      "links": [],
+      "meta": {},
+
+      "stats": { "like": 23, "comment": 8, "view": 560 },
+      "isLiked": false,
+      "isBookmarked": true,
+      "comments": [
+        {
+          "id": "c_4_1",
+          "author": { "id": "u_205", "nickname": "@ f1xpitt", "avatar": "/src/assets/img/community/post/f1xpitt.png" },
+          "content": "ㄹㅇ ... 페라리는 성적보다 이야기가 먼저 떠오름",
+          "createdAt": "12m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_4_2",
+          "author": { "id": "u_102", "nickname": "@ Fanner1_98", "avatar": "/src/assets/img/community/post/Fanner1_98.png" },
+          "content": "그치 ㅋㅋ 그래서 성적 안 좋아도 매번 보게 됨",
+          "createdAt": "10m",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        },
+        {
+          "id": "c_4_3",
+          "author": { "id": "u_888", "nickname": "@ RedFlag", "avatar": "/src/assets/img/community/post/RedFlag.png" },
+          "content": "욕하면서 보는 팀 1위는 페라리임 인정",
+          "createdAt": "17m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_4_4",
+          "author": { "id": "u_102", "nickname": "@ Fanner1_98", "avatar": "/src/assets/img/community/post/Fanner1_98.png" },
+          "content": "기대 → 실망 → 또 기대 이 무한루프",
+          "createdAt": "14m",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        },
+        {
+          "id": "c_4_5",
+          "author": { "id": "u_777", "nickname": "@ kim_maxmax", "avatar": "/src/assets/img/community/post/kim_maxmax.png" },
+          "content": "이 팀은 우승 못 해도 레이스 주인공이긴 함",
+          "createdAt": "24m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_4_6",
+          "author": { "id": "u_102", "nickname": "@ Fanner1_98", "avatar": "/src/assets/img/community/post/Fanner1_98.png" },
+          "content": "레이스의 얼굴 그 자체",
+          "createdAt": "23m",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        },
+        {
+          "id": "c_4_7",
+          "author": { "id": "u_Speed", "nickname": "@ SpeedLover", "avatar": "/src/assets/img/community/post/SpeedLover.png" },
+          "content": "페라리 팬은 멘탈 수련하는 거라는 말 공감됨",
+          "createdAt": "43m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_4_8",
+          "author": { "id": "u_102", "nickname": "@ Fanner1_98", "avatar": "/src/assets/img/community/post/Fanner1_98.png" },
+          "content": "이 정도면 인생 수업임",
+          "createdAt": "42m",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "p_0005",
+      "type": "text",
+      "board": "free",
+      "title": "안녕하세요. f1 신입 인사드립니다.",
+      "content": "안녕하세요, 이번에 새로 합류한 신입 pitlane_99입니다.\nF1을 좋아하는 한 사람으로서 많이 배우고\n즐겁게 소통하고 싶습니다.\n\n잘 부탁드립니다! 🏁",
+      "author": {
+        "id": "u_pit",
+        "nickname": "@ pitlane_99",
+        "avatar": "/src/assets/img/community/post/pitlane_99.png",
+        "badge": "Audi"
+      },
+      "createdAt": "1h",
+      "visibility": "public",
+      "tags": ["#신입", "#인사", "#F1"],
+      "media": [
+        { "kind": "image", "url": "/src/assets/img/community/post/post_5.png", "ratio": "4:5" }
+      ],
+      "links": [],
+      "meta": {},
+
+      "stats": { "like": 20, "comment": 5, "view": 300 },
+      "isLiked": false,
+      "isBookmarked": false,
+      "comments": [
+        {
+          "id": "c_5_1",
+          "author": { "id": "u_new", "nickname": "@ newbi_f1", "avatar": "/src/assets/img/community/post/newbi_f1.png" },
+          "content": "환영합니다 pitlane_99님! 편하게 같이 떠들어요!",
+          "createdAt": "15m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_5_2",
+          "author": { "id": "u_Speed", "nickname": "@ SpeedLover", "avatar": "/src/assets/img/community/post/SpeedLover.png" },
+          "content": "오 신입 등장!!\n피트레인 아이디부터 이미 찐이네요 ㅋㅋ\n환영합니다!",
+          "createdAt": "43m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_5_3",
+          "author": { "id": "u_pit", "nickname": "@ pitlane_99", "avatar": "/src/assets/img/community/post/pitlane_99.png" },
+          "content": "감사합니다! 잘부탁드립니다~",
+          "createdAt": "2m",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        },
+        {
+          "id": "c_5_4",
+          "author": { "id": "u_102", "nickname": "@ Fanner1_98", "avatar": "/src/assets/img/community/post/Fanner1_98.png" },
+          "content": "환영합니다! 즐기면서 같이 F1 이야기 많이 나눠요 🔥",
+          "createdAt": "43m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_5_5",
+          "author": { "id": "u_pit", "nickname": "@ pitlane_99", "avatar": "/src/assets/img/community/post/pitlane_99.png" },
+          "content": "감사합니다! 잘부탁드립니다~",
+          "createdAt": "2m",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "p_0006",
+      "type": "text",
+      "board": "free",
+      "title": "없는게 없는 무한도전..",
+      "content": "과거 무한도전에서 영암에서 열린 F1 그랑프리 기념으로\n말레이시아 가서 카레이싱 특집을 찍으면서\n이런 장면이 나왔는데...\n아니 진짜 브래드 피트 주연 F1 영화가 나올줄은....",
+      "author": {
+        "id": "u_brad",
+        "nickname": "@ bradpitbox",
+        "avatar": "/src/assets/img/community/post/bradpitbox.png",
+        "badge": "Williams"
+      },
+      "createdAt": "1h",
+      "visibility": "public",
+      "tags": ["#무한도전", "#F1", "#브래드피트"],
+      "media": [
+        { "kind": "image", "url": "/src/assets/img/community/post/post_6_1.png", "ratio": "4:5" },
+        { "kind": "image", "url": "/src/assets/img/community/post/post_6_2.png", "ratio": "4:5" },
+        { "kind": "image", "url": "/src/assets/img/community/post/post_6_3.png", "ratio": "4:5" }
+      ],
+      "links": [],
+      "meta": {},
+
+      "stats": { "like": 24, "comment": 5, "view": 410 },
+      "isLiked": false,
+      "isBookmarked": false,
+      "comments": [
+        {
+          "id": "c_6_1",
+          "author": { "id": "u_888", "nickname": "@ RedFlag", "avatar": "/src/assets/img/community/post/RedFlag.png" },
+          "content": "이러니까 무도 다시 보게 됨... 시대를 너무 앞서감",
+          "createdAt": "40m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_6_2",
+          "author": { "id": "u_box", "nickname": "@ boxbox_f1", "avatar": "/src/assets/img/community/post/boxbox_f1.png" },
+          "content": "이게 떡밥이 이렇게 회수될 줄이야... 무한도전 진짜 선구자였음 ㅋㅋ",
+          "createdAt": "45m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_6_3",
+          "author": { "id": "u_norris", "nickname": "@ NorrisFan", "avatar": "/src/assets/img/community/post/NorrisFan.png" },
+          "content": "당시엔 아무도 몰랐던 떡밥 회수... 소름 인정",
+          "createdAt": "42m",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        },
+        {
+          "id": "c_6_4",
+          "author": { "id": "u_pitcrew", "nickname": "@ PitCrew", "avatar": "/src/assets/img/community/post/PitCrew.png" },
+          "content": "브래드 피트 F1 영화가 현실이 될 줄 누가 알았겠냐고요...",
+          "createdAt": "50m",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_6_5",
+          "author": { "id": "u_brad", "nickname": "@ bradpitbox", "avatar": "/src/assets/img/community/post/bradpitbox.png" },
+          "content": "이래서 무한도전이 레전드라 불리는 거지",
+          "createdAt": "48m",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "p_0007",
+      "type": "text",
+      "board": "free",
+      "title": "걍 막스가 너무 웃김",
+      "content": "포뮬러원 레이서인데\n부업이 가명으로 프란츠헤르만 쓰면서 레이싱하기\n\n레드불 계속 뛰는 이유 : 에프원말고도 레이싱뛰게해줘서\n진짜.. 레친놈 ㅇㅈ합니다",
+      "author": {
+        "id": "u_777",
+        "nickname": "@ kim_maxmax",
+        "avatar": "/src/assets/img/community/post/kim_maxmax.png",
+        "badge": "RedBull"
+      },
+      "createdAt": "2h",
+      "visibility": "public",
+      "tags": ["#막스", "#레드불", "#심레이싱"],
+      "media": [
+        { "kind": "image", "url": "/src/assets/img/community/post/post_7.png", "ratio": "4:5" }
+      ],
+      "links": [],
+      "meta": {},
+
+      "stats": { "like": 17, "comment": 3, "view": 250 },
+      "isLiked": false,
+      "isBookmarked": false,
+      "comments": [
+        {
+          "id": "c_7_1",
+          "author": { "id": "u_Speed", "nickname": "@ SpeedLover", "avatar": "/src/assets/img/community/post/SpeedLover.png" },
+          "content": "가명까지 써가면서 레이싱 뛰는 건 진짜 미친 열정이다 ㅋㅋ",
+          "createdAt": "1h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_7_2",
+          "author": { "id": "u_205", "nickname": "@ f1xpitt", "avatar": "/src/assets/img/community/post/f1xpitt.png" },
+          "content": "F1만으로도 충분할 텐데 더 타고 싶어서 저러는 거 보면... 레친놈이라는 말밖에 안 나옴",
+          "createdAt": "2h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_7_3",
+          "author": { "id": "u_777", "nickname": "@ kim_maxmax", "avatar": "/src/assets/img/community/post/kim_maxmax.png" },
+          "content": "진짜 타고 태어난 사람..",
+          "createdAt": "2h",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "p_0008",
+      "type": "text",
+      "board": "free",
+      "title": "F1 뉴비분들 이 영상부터 보세요",
+      "content": "F1 처음이라 뭐부터 봐야 할지 모르겠다면\n이 영상이 진짜 이해 잘 됩니다.\n\nF1 처음이라 뭐부터 봐야 할지 모르겠다면\n이 영상이 진짜 이해 잘 됩니다.\n\nF1 막 입덕했거나 주변에 뉴비 있으면\n이 영상 먼저 추천해 주세요!\n보고 나면 경기 보는 재미 확 올라갑니다🔥",
+      "author": {
+        "id": "u_pitcrew",
+        "nickname": "@ PitCrew",
+        "avatar": "/src/assets/img/community/post/PitCrew.png",
+        "badge": "McLaren"
+      },
+      "createdAt": "2h",
+      "visibility": "public",
+      "tags": ["#F1입문", "#뉴비", "#가이드"],
+      "media": [
+        { "kind": "youtube", "url": "https://www.youtube.com/embed/Ha1tWwGntpM?si=tftTFOAKZNEae5XE", "ratio": "16:9" }
+      ],
+      "links": [],
+      "meta": {},
+
+      "stats": { "like": 12, "comment": 5, "view": 150 },
+      "isLiked": false,
+      "isBookmarked": false,
+      "comments": [
+        {
+          "id": "c_8_1",
+          "author": { "id": "u_pit", "nickname": "@ pitlane_99", "avatar": "/src/assets/img/community/post/pitlane_99.png" },
+          "content": "저 진짜 F1 이제 막 보기 시작했는데 이 영상 도움 많이 됐어요... 용어부터 흐름까지 이해가 되네요 감사합니다!",
+          "createdAt": "1h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_8_2",
+          "author": { "id": "u_new", "nickname": "@ newbi_f1", "avatar": "/src/assets/img/community/post/newbi_f1.png" },
+          "content": "입문 영상 찾고 있었는데 딱이네요\n추천해주셔서 감사합니다!",
+          "createdAt": "2h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_8_3",
+          "author": { "id": "u_box", "nickname": "@ boxbox_f1", "avatar": "/src/assets/img/community/post/boxbox_f1.png" },
+          "content": "입문용으로 이만한 영상 없는 듯\n친구 입덕시킬 때 바로 이거 보냄 ㅋㅋ",
+          "createdAt": "2h",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        },
+        {
+          "id": "c_8_4",
+          "author": { "id": "u_benn", "nickname": "@ bennzzz_24", "avatar": "/src/assets/img/community/post/bennzzz_24.png" },
+          "content": "나도 이거 봤는데ㅋㅋㅋㅋㅋㅋㅋ",
+          "createdAt": "2h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_8_5",
+          "author": { "id": "u_pitcrew", "nickname": "@ PitCrew", "avatar": "/src/assets/img/community/post/PitCrew.png" },
+          "content": "도움이 되셨다니 다행입니다! 즐거운 F1 관람 되세요!",
+          "createdAt": "1h",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "p_0009",
+      "type": "poll",
+      "board": "free",
+      "title": "저메추",
+      "content": "F1 보면서 먹을건데 ㅊㅊ해주라",
+      "author": {
+        "id": "u_box",
+        "nickname": "@ boxbox_f1",
+        "avatar": "/src/assets/img/community/post/boxbox_f1.png",
+        "badge": "McLaren"
+      },
+      "createdAt": "2h",
+      "visibility": "public",
+      "tags": ["#저메추", "#F1", "#야식"],
       "media": [],
       "links": [],
       "meta": {},
 
       "poll": {
-        "allowMulti": false,
-        "endsAt": "2026-01-15T18:30:00+09:00",
+        "id": "poll_9",
+        "question": "투표",
+        "userVotedOptionId": null,
         "options": [
-          { "id": "o1", "label": "Leclerc", "count": 132 },
-          { "id": "o2", "label": "Norris", "count": 98 },
-          { "id": "o3", "label": "Verstappen", "count": 210 }
-        ],
-        "userVotedOptionId": "o3"
+          { "id": "po_1", "label": "치킨", "count": 6 },
+          { "id": "po_2", "label": "피자", "count": 4 },
+          { "id": "po_3", "label": "마라샹궈", "count": 3 },
+          { "id": "po_4", "label": "나머지 댓글", "count": 2 }
+        ]
       },
 
-      "stats": { "like": 44, "comment": 9, "view": 888 },
+      "stats": { "like": 4, "comment": 2, "view": 80 },
       "isLiked": false,
       "isBookmarked": false,
-      "comments": []
+      "comments": [
+        {
+          "id": "c_9_1",
+          "author": { "id": "u_205", "nickname": "@ f1xpitt", "avatar": "/src/assets/img/community/post/f1xpitt.png" },
+          "content": "난 족발만한게 없더라",
+          "createdAt": "2h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_9_2",
+          "author": { "id": "u_box", "nickname": "@ boxbox_f1", "avatar": "/src/assets/img/community/post/boxbox_f1.png" },
+          "content": "맛있겠다.......",
+          "createdAt": "2h",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        }
+      ]
     },
-
     {
-      "id": "p_0004",
-      "type": "trade",
-      "board": "trade",
-      "title": "F1 레고 교환 구해요",
-      "content": "맥라렌/레드불 파츠 교환 원합니다. DM 주세요!",
+      "id": "p_0010",
+      "type": "text",
+      "board": "free",
+      "title": "고대로 컸다",
+      "content": "카트 삼인방 갓기시절 ㄱㅇㅇ",
       "author": {
-        "id": "u_909",
-        "nickname": "brick_pit",
-        "avatar": "/img/avatars/u_909.png",
-        "badge": "McLaren"
+        "id": "u_form",
+        "nickname": "@ formationlap",
+        "avatar": "/src/assets/img/community/post/formationlap.png",
+        "badge": "Ferrari"
       },
-      "createdAt": "2026-01-14T20:10:00+09:00",
+      "createdAt": "3h",
       "visibility": "public",
-      "tags": ["#교환", "#레고"],
-
+      "tags": ["#카트", "#유망주", "#떡잎"],
       "media": [
-        { "kind": "image", "url": "/img/posts/p_0004_1.jpg", "ratio": "4:5" }
+        { "kind": "image", "url": "/src/assets/img/community/post/post_10_1.png", "ratio": "1:1" },
+        { "kind": "image", "url": "/src/assets/img/community/post/post_10_2.png", "ratio": "4:3" },
+        { "kind": "image", "url": "/src/assets/img/community/post/post_10_3.png", "ratio": "4:3" }
       ],
       "links": [],
       "meta": {},
 
-      "trade": {
-        "status": "open",
-        "category": "lego",
-        "want": ["McLaren set 2024", "RedBull minifig"],
-        "have": ["Ferrari set 2023"],
-        "region": "Seoul",
-        "shipping": "both",
-        "price": null,
-        "contact": { "type": "dm", "value": "brick_pit" }
-      },
-
-      "stats": { "like": 7, "comment": 2, "view": 190 },
+      "stats": { "like": 32, "comment": 4, "view": 520 },
       "isLiked": false,
-      "isBookmarked": true,
-      "comments": []
+      "isBookmarked": false,
+      "comments": [
+        {
+          "id": "c_10_1",
+          "author": { "id": "u_102", "nickname": "@ Fanner1_98", "avatar": "/src/assets/img/community/post/Fanner1_98.png" },
+          "content": "저 시절부터 레이싱밖에 모르던 애가 결국 페라리 드라이버 된 거 생각하면 마음이 복잡해짐...",
+          "createdAt": "2h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_10_2",
+          "author": { "id": "u_new", "nickname": "@ newbi_f1", "avatar": "/src/assets/img/community/post/newbi_f1.png" },
+          "content": "헐 진짜 그대로 컸네요!!",
+          "createdAt": "2h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_10_3",
+          "author": { "id": "u_brad", "nickname": "@ bradpitbox", "avatar": "/src/assets/img/community/post/bradpitbox.png" },
+          "content": "저때는 그냥 애들이었는데\n지금은 그리드 서 있는 거 보면 세월 실감남",
+          "createdAt": "3h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_10_4",
+          "author": { "id": "u_form", "nickname": "@ formationlap", "avatar": "/src/assets/img/community/post/formationlap.png" },
+          "content": "시간이 너무 빠르죠...",
+          "createdAt": "3h",
+          "like": 0,
+          "isReply": true,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "p_0011",
+      "type": "text",
+      "board": "free",
+      "title": "입문자 질문 하나만...",
+      "content": "레이스 중에 왜 갑자기 피트 들어가요?\n\n전략 차이인가요?",
+      "author": {
+        "id": "u_new",
+        "nickname": "@ newbi_f1",
+        "avatar": "/src/assets/img/community/post/newbi_f1.png",
+        "badge": "McLaren"
+      },
+      "createdAt": "4h",
+      "visibility": "public",
+      "tags": ["#F1입문", "#질문", "#전략"],
+      "media": [],
+      "links": [],
+      "meta": {},
+
+      "stats": { "like": 3, "comment": 4, "view": 120 },
+      "isLiked": false,
+      "isBookmarked": false,
+      "comments": [
+        {
+          "id": "c_11_1",
+          "author": { "id": "u_brad", "nickname": "@ bradpitbox", "avatar": "/src/assets/img/community/post/bradpitbox.png" },
+          "content": "레이스 중에 갑자기 피트 들어가는 건 대부분 타이어 관리랑 전략 때문이에요.\nF1 타이어는 랩 수가 쌓일수록 성능이 급격히 떨어져서 새 타이어랑 오래 쓴 타이어 차이가 꽤 큽니다.\n\n그래서 먼저 들어가서 새 타이어로 랩타임을 줄이는 언더컷 전략을 쓰는 경우가 많고, 반대로 트랙에 남아서 더 달리는 오버컷을 선택하기도 해요.\n\n또 세이프티카나 VSC가 나오면 시간 손해가 적어서 다 같이 피트 들어가는 경우도 많고요. 중계에선 갑자기 들어가는 것처럼 보여도 거의 다 계산된 선택이라고 보면 됩니다.",
+          "createdAt": "4h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_11_2",
+          "author": { "id": "u_new", "nickname": "@ newbi_f1", "avatar": "/src/assets/img/community/post/newbi_f1.png" },
+          "content": "세이프티카나 VSC가 뭘까요ㅠㅠ",
+          "createdAt": "4h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_11_3",
+          "author": { "id": "u_brad", "nickname": "@ bradpitbox", "avatar": "/src/assets/img/community/post/bradpitbox.png" },
+          "content": "세이프티카(SC)는 사고나 위험 상황 때 실제 차량이 트랙에 나와서 모두 느리게 달리게 하는 거고, VSC는 차량 없이 전 차가 정해진 속도를 지켜야 하는 상태예요.\n이때는 피트 들어가도 시간 손해가 적어서 전략적으로 중요합니다.",
+          "createdAt": "4h",
+          "like": 0,
+          "replies": []
+        },
+        {
+          "id": "c_11_4",
+          "author": { "id": "u_new", "nickname": "@ newbi_f1", "avatar": "/src/assets/img/community/post/newbi_f1.png" },
+          "content": "아하 너무 잘 이해됐어요!\n정말 감사드립니다!!",
+          "createdAt": "4h",
+          "like": 0,
+          "replies": []
+        }
+      ]
     }
   ]
 }
