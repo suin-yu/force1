@@ -1,0 +1,97 @@
+/* 전체 페이지 컨테이너 */
+.vote-page-container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    height: auto;
+    min-height: auto;
+    background-color: #000;
+    /* 전체 배경 검은색 */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+    /* 양쪽 여백 */
+    box-sizing: border-box;
+}
+
+/* --- 2. 베팅 카드(이미지+텍스트) 스타일 --- */
+.vote-content {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.betting-card {
+    position: relative;
+    /* 자식요소(overlay)의 기준점 */
+    width: 100%;
+    border-radius: 1px;
+    /* 모서리 살짝 둥글게 */
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    /* 이미지 외곽선 (선택사항) */
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    /* position: absolute;
+    bottom: 500px; */
+    display: block;
+
+}
+
+/* 텍스트 오버레이 위치 잡기 */
+.card-overlay {
+    position: absolute;
+    bottom: 20px;
+    /* 아래에서 20px 띄움 */
+    left: 20px;
+    /* 왼쪽에서 20px 띄움 */
+    z-index: 10;
+}
+
+.overlay-text {
+    /* 1. 폰트 적용 (아까 설정한 것) */
+    font-family: "Juventus Fans", sans-serif;
+
+    /* 2. 그라데이션 배경 설정 
+        - 각도: 155deg
+        - 색상 Stops: 0%(흰색), 32%(중간색), 100%(끝색)
+    */
+    background: linear-gradient(-155deg,
+            #ffffff 0%,
+            #DEDFCE 32%,
+            #BEBF9F 100%);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0;
+    font-weight: normal;
+}
+
+/* --- 3. 하단 버튼 스타일 --- */
+.bottom-action-area {
+    padding: 20px 0;
+    /*  margin-top: auto; 화면 맨 아래로 밀기 */
+}
+
+/* 만약 공통 컴포넌트가 없다면 이 스타일을 사용하세요 */
+
+.vote-action-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #CD1C10;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}

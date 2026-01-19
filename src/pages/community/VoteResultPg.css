@@ -1,0 +1,238 @@
+.vote-result-container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #080808;
+    padding-bottom: 180px;
+}
+
+/* 1위 선수 섹션 */
+.first-place-section {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.first-place-card {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    height: 500px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0;
+    overflow: hidden;
+}
+
+.p1-icon {
+    position: absolute;
+    top: 86px;
+    left: 22px;
+    width: 180px;
+    height: 150px;
+    z-index: 2;
+}
+
+.first-place-info {
+    position: absolute;
+    left: 20px;
+    bottom: 80px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.name-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.surname-line {
+    display: flex;
+    align-items: center;
+}
+
+.first-place-name {
+    font-family: "Juventus Fans", sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1;
+}
+
+.marks-inline {
+    display: flex;
+    gap: 0px;
+    align-items: center;
+}
+
+.mark-icon-country {
+    width: 35px;
+    height: 23px;
+    object-fit: contain;
+}
+
+.mark-icon-team {
+    width: 65px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.first-place-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom right;
+}
+
+/* 랭킹 리스트 섹션 */
+.ranking-list-section {
+    padding: 20px;
+}
+
+.ranking-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(40, 40, 45, 0.6) 0%, rgba(25, 25, 30, 0.7) 100%);
+    border-radius: 15px;
+    padding: 20px 25px;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ranking-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    padding: 1px;
+    background: linear-gradient(-75deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 30%,
+            rgba(255, 255, 255, 0.3) 40%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0.1) 60%,
+            rgba(255, 255, 255, 0) 90%,
+            rgba(255, 255, 255, 0) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0
+}
+
+.rank-number {
+    font-size: 20px;
+    font-weight: 500;
+    color: #939393;
+    min-width: 30px;
+    font-family: "roboto", sans-serif;
+    line-height: 130%;
+    letter-spacing: -4%;
+    text-align: left;
+}
+
+.rank-profile {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.rank-name-bar {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+.rank-name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rank-logo {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.rank-name {
+    font-size: 14px;
+    font-weight: 300;
+    font-family: "roboto", sans-serif;
+    color: #fff;
+    line-height: 130%;
+    letter-spacing: -4%;
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.rank-bar {
+    width: auto;
+    height: 20px;
+    object-fit: contain;
+}
+
+
+
+.rank-percentage {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    min-width: 50px;
+    font-family: "roboto", sans-serif;
+    line-height: 130%;
+    letter-spacing: -4%;
+    text-align: right;
+}
+
+/* 하단 버튼 영역 */
+.bottom-action-area {
+    padding: 20px;
+
+}
+
+.vote-action-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #CD1C10;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
