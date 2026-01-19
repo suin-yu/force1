@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Races.css";
+import "./RacesPg.css";
 
 const Races = () => {
   const navigate = useNavigate();

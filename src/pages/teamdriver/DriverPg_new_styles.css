@@ -1,0 +1,185 @@
+/* Selector Button Styles (from RacesPg) */
+.content-area .button .selector-button {
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border-radius: 50px;
+  color: #eaeaea;
+  background: rgba(24, 24, 27, 1);
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.content-area .button .selector-button img {
+  margin-top: 4px;
+  width: 10px;
+  height: auto;
+  opacity: 0.8;
+}
+
+.selector-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.selector-border-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  padding: 1px;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.selector-border-glow::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 53%);
+  filter: blur(0px);
+}
+
+.selector-button.run-motion .selector-border-glow::before {
+  animation: border-sweep 0.8s ease-in-out forwards;
+}
+
+@keyframes border-sweep {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* 모달 열릴 때 GNB, TopBtn 숨기기 */
+.main-layout:has(.modal-overlay) .scroll-top-btn,
+.main-layout:has(.modal-overlay) .bottom-bar {
+  display: none;
+}
+
+body:has(.modal-overlay) .gnb-container,
+body:has(.modal-overlay) .top-btn-container {
+  display: none;
+}
+
+/* Updated Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.picker-modal {
+  background: #080808;
+  border-radius: 20px 20px 0 0;
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 430px;
+  margin-bottom: 0;
+}
+
+.picker-container {
+  position: relative;
+  height: 250px;
+  margin-top: 20px;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
+}
+
+.selection-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.picker-column {
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.picker-column::-webkit-scrollbar {
+  display: none;
+}
+
+.picker-scroll {
+  display: flex;
+  flex-direction: column;
+}
+
+.spacer {
+  height: 95px;
+}
+
+.picker-item {
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  color: #ffffff;
+  opacity: 0.2;
+  transition: opacity 0.3s transform 0.3s;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.picker-item.active {
+  opacity: 1;
+  color: #eaeaea;
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+.select-complete-btn {
+  width: 90%;
+  height: 60px;
+  background-color: #CD1C10;
+  color: #eaeaea;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+}

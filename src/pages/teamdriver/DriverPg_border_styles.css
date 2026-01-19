@@ -1,0 +1,216 @@
+/* 드라이버 카드 테두리 그라데이션 (RacesPg 팀 색상 적용) */
+
+/* 기본 테두리 설정 */
+.driverlist ul li::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 10px;
+  padding: 2px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ferrari - Charles Leclerc (137,52,63) */
+.driverlist ul li.ferrari_1::before {
+  background: linear-gradient(-57deg,
+    rgba(137,52,63,0) 0%, 
+    rgba(137,52,63,0.3) 40%, 
+    rgba(137,52,63,0.8) 50%, 
+    rgba(137,52,63,0.3) 60%, 
+    rgba(137,52,63,0) 100%);
+}
+
+/* Ferrari - Lewis Hamilton (137,52,63) */
+.driverlist ul li.ferrari_2::before {
+  background: linear-gradient(-57deg,
+    rgba(137,52,63,0) 0%, 
+    rgba(137,52,63,0.3) 40%, 
+    rgba(137,52,63,0.8) 50%, 
+    rgba(137,52,63,0.3) 60%, 
+    rgba(137,52,63,0) 100%);
+}
+
+/* Red Bull - Max Verstappen (57,74,150) */
+.driverlist ul li.redbull_1::before {
+  background: linear-gradient(-57deg,
+    rgba(57,74,150,0) 0%, 
+    rgba(57,74,150,0.3) 40%, 
+    rgba(57,74,150,0.8) 50%, 
+    rgba(57,74,150,0.3) 60%, 
+    rgba(57,74,150,0) 100%);
+}
+
+/* Red Bull - Liam Lawson (57,74,150) */
+.driverlist ul li.redbull_2::before {
+  background: linear-gradient(-57deg,
+    rgba(57,74,150,0) 0%, 
+    rgba(57,74,150,0.3) 40%, 
+    rgba(57,74,150,0.8) 50%, 
+    rgba(57,74,150,0.3) 60%, 
+    rgba(57,74,150,0) 100%);
+}
+
+/* Mercedes - Kimi Antonelli (72,215,231) */
+.driverlist ul li.mercedes_1::before {
+  background: linear-gradient(-57deg,
+    rgba(72,215,231,0) 0%, 
+    rgba(72,215,231,0.3) 40%, 
+    rgba(72,215,231,0.8) 50%, 
+    rgba(72,215,231,0.3) 60%, 
+    rgba(72,215,231,0) 100%);
+}
+
+/* Mercedes - George Russell (72,215,231) */
+.driverlist ul li.mercedes_2::before {
+  background: linear-gradient(-57deg,
+    rgba(72,215,231,0) 0%, 
+    rgba(72,215,231,0.3) 40%, 
+    rgba(72,215,231,0.8) 50%, 
+    rgba(72,215,231,0.3) 60%, 
+    rgba(72,215,231,0) 100%);
+}
+
+/* McLaren - Oscar Piastri (255,135,44) */
+.driverlist ul li.mclaren_1::before {
+  background: linear-gradient(-57deg,
+    rgba(255,135,44,0) 0%, 
+    rgba(255,135,44,0.3) 40%, 
+    rgba(255,135,44,0.8) 50%, 
+    rgba(255,135,44,0.3) 60%, 
+    rgba(255,135,44,0) 100%);
+}
+
+/* McLaren - Lando Norris (255,135,44) */
+.driverlist ul li.mclaren_2::before {
+  background: linear-gradient(-57deg,
+    rgba(255,135,44,0) 0%, 
+    rgba(255,135,44,0.3) 40%, 
+    rgba(255,135,44,0.8) 50%, 
+    rgba(255,135,44,0.3) 60%, 
+    rgba(255,135,44,0) 100%);
+}
+
+/* Aston Martin - Fernando Alonso (22,177,172) */
+.driverlist ul li.aston_1::before {
+  background: linear-gradient(-57deg,
+    rgba(22,177,172,0) 0%, 
+    rgba(22,177,172,0.3) 40%, 
+    rgba(22,177,172,0.8) 50%, 
+    rgba(22,177,172,0.3) 60%, 
+    rgba(22,177,172,0) 100%);
+}
+
+/* Aston Martin - Lance Stroll (22,177,172) */
+.driverlist ul li.aston_2::before {
+  background: linear-gradient(-57deg,
+    rgba(22,177,172,0) 0%, 
+    rgba(22,177,172,0.3) 40%, 
+    rgba(22,177,172,0.8) 50%, 
+    rgba(22,177,172,0.3) 60%, 
+    rgba(22,177,172,0) 100%);
+}
+
+/* Alpine - Jack Doohan (213,81,156) */
+.driverlist ul li.alpin_1::before {
+  background: linear-gradient(-57deg,
+    rgba(213,81,156,0) 0%, 
+    rgba(213,81,156,0.3) 40%, 
+    rgba(213,81,156,0.8) 50%, 
+    rgba(213,81,156,0.3) 60%, 
+    rgba(213,81,156,0) 100%);
+}
+
+/* Alpine - Pierre Gasly (213,81,156) */
+.driverlist ul li.alpin_2::before {
+  background: linear-gradient(-57deg,
+    rgba(213,81,156,0) 0%, 
+    rgba(213,81,156,0.3) 40%, 
+    rgba(213,81,156,0.8) 50%, 
+    rgba(213,81,156,0.3) 60%, 
+    rgba(213,81,156,0) 100%);
+}
+
+/* Haas - Oliver Bearman (167,169,173) */
+.driverlist ul li.hass_1::before {
+  background: linear-gradient(-57deg,
+    rgba(167,169,173,0) 0%, 
+    rgba(167,169,173,0.3) 40%, 
+    rgba(167,169,173,0.8) 50%, 
+    rgba(167,169,173,0.3) 60%, 
+    rgba(167,169,173,0) 100%);
+}
+
+/* Haas - Esteban Ocon (167,169,173) */
+.driverlist ul li.hass_2::before {
+  background: linear-gradient(-57deg,
+    rgba(167,169,173,0) 0%, 
+    rgba(167,169,173,0.3) 40%, 
+    rgba(167,169,173,0.8) 50%, 
+    rgba(167,169,173,0.3) 60%, 
+    rgba(167,169,173,0) 100%);
+}
+
+/* Racing Bulls - Isack Hadjar (215,221,236) */
+.driverlist ul li.racingbull_1::before {
+  background: linear-gradient(-57deg,
+    rgba(215,221,236,0) 0%, 
+    rgba(215,221,236,0.3) 40%, 
+    rgba(215,221,236,0.8) 50%, 
+    rgba(215,221,236,0.3) 60%, 
+    rgba(215,221,236,0) 100%);
+}
+
+/* Racing Bulls - Yuki Tsunoda (215,221,236) */
+.driverlist ul li.racingbull_2::before {
+  background: linear-gradient(-57deg,
+    rgba(215,221,236,0) 0%, 
+    rgba(215,221,236,0.3) 40%, 
+    rgba(215,221,236,0.8) 50%, 
+    rgba(215,221,236,0.3) 60%, 
+    rgba(215,221,236,0) 100%);
+}
+
+/* Williams - Carlos Sainz (99,137,249) */
+.driverlist ul li.williams_1::before {
+  background: linear-gradient(-57deg,
+    rgba(99,137,249,0) 0%, 
+    rgba(99,137,249,0.3) 40%, 
+    rgba(99,137,249,0.8) 50%, 
+    rgba(99,137,249,0.3) 60%, 
+    rgba(99,137,249,0) 100%);
+}
+
+/* Williams - Alexander Albon (99,137,249) */
+.driverlist ul li.williams_2::before {
+  background: linear-gradient(-57deg,
+    rgba(99,137,249,0) 0%, 
+    rgba(99,137,249,0.3) 40%, 
+    rgba(99,137,249,0.8) 50%, 
+    rgba(99,137,249,0.3) 60%, 
+    rgba(99,137,249,0) 100%);
+}
+
+/* Kick Sauber - Gabriel Bortoleto (29,132,30) */
+.driverlist ul li.kicksauber_1::before {
+  background: linear-gradient(-57deg,
+    rgba(29,132,30,0) 0%, 
+    rgba(29,132,30,0.3) 40%, 
+    rgba(29,132,30,0.8) 50%, 
+    rgba(29,132,30,0.3) 60%, 
+    rgba(29,132,30,0) 100%);
+}
+
+/* Kick Sauber - Nico Hülkenberg (29,132,30) */
+.driverlist ul li.kicksauber_2::before {
+  background: linear-gradient(-57deg,
+    rgba(29,132,30,0) 0%, 
+    rgba(29,132,30,0.3) 40%, 
+    rgba(29,132,30,0.8) 50%, 
+    rgba(29,132,30,0.3) 60%, 
+    rgba(29,132,30,0) 100%);
+}

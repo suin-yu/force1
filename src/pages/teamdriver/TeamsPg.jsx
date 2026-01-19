@@ -553,7 +553,7 @@ const TeamsPg = () => {
             </div>
           </div>
           {/* 섹션 5: HIGHLIGHT (영상/이미지 하이라이트 슬라이더) */}
-          <div className="highlight-section">
+          <div className="teams-highlight-section">
             <div className="highlight-header">
               <h2 className="section-title">HIGHLIGHT</h2>
               <button className="plus-button" aria-label="더 보기">
@@ -587,7 +587,7 @@ const TeamsPg = () => {
             </div>
           </div>
           {/* 섹션 6: News (뉴스 리스트) */}
-          <div className="news-section">
+          <div className="teams-news-section">
             <div className="news-header">
               <h2 className="section-title">News</h2>
               <button className="plus-button" aria-label="더 보기">

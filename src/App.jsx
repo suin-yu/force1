@@ -19,7 +19,8 @@ import TeamDriverLayout from "./components/TeamDriverLayout";
 import ShortsLayout from "./components/ShortsLayout";
 import CommunityLayout from "./components/CommunityLayout";
 import MyLayout from "./components/MyLayout";
-import Mercedes from "./pages/teamdriver/Mercedes";
+import MercedesPg from "./pages/teamdriver/MercedesPg";
+import DriverDetailPg from "./pages/teamdriver/DriverDetailPg";
 
 
 function App() {
@@ -39,7 +40,8 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomeLayout />} />
           <Route path="/teamdriver" element={<TeamDriverLayout />} />
-          <Route path="/teamdriver/mercedes" element={<Mercedes />} /> {/* Added Mercedes route */}
+          <Route path="/teamdriver/mercedes" element={<MercedesPg />} /> {/* Added Mercedes route */}
+          <Route path="/driver/:id" element={<DriverDetailPg />} /> {/* Added Driver Detail route */}
           <Route path="/shorts" element={<ShortsLayout />} />
           <Route path="/community" element={<CommunityLayout />} />
           <Route path="/my" element={<MyLayout />} />

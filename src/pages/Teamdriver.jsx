@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import TeamsPg from "./teamdriver/TeamsPg";
-import Races from "./teamdriver/Races";
+import DriverPg from "./teamdriver/DriverPg";
+import Races from "./teamdriver/RacesPg";
 import "./Teamdriver.css";
 
 const Teamdriver = () => {
@@ -40,12 +41,7 @@ const Teamdriver = () => {
       <main className="content-wrapper">
         {activeTab === "Teams" && <TeamsPg />}
 
-        {activeTab === "Drivers" && (
-          <div className="placeholder-screen">
-            <h2>Drivers Page</h2>
-            <p>준비 중입니다.</p>
-          </div>
-        )}
+        {activeTab === "Drivers" && <DriverPg />}
 
         {activeTab === "Races" && <Races />}
       </main>

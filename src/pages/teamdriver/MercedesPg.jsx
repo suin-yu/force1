@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Mercedes.css";
+import "./MercedesPg.css";
 
 const Mercedes = () => {
   const navigate = useNavigate();
