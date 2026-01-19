@@ -1,0 +1,465 @@
+.races-page {
+  background-color: #080808;
+  color: #eaeaea;
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 430px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+/* 필터 및 타이틀 */
+.filter-section {
+  margin: 20px 0;
+}
+
+/* Selector Button Styles (from TeamsPg) */
+.selector-button {
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border-radius: 50px;
+  color: #eaeaea;
+  background: rgba(24, 24, 27, 1);
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.selector-button img {
+  margin-top: 4px;
+}
+
+.selector-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.selector-border-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  padding: 1px;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.selector-border-glow::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 53%);
+  filter: blur(0px);
+}
+
+.selector-button.run-motion .selector-border-glow::before {
+  animation: border-sweep 0.8s ease-in-out forwards;
+}
+
+@keyframes border-sweep {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Picker Modal/* 모달 오버레이 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* 모달 열릴 때 GNB, TopBtn, scroll-top-btn, bottom-bar 숨기기 */
+.races-page:has(.modal-overlay) .scroll-top-btn,
+.races-page:has(.modal-overlay) .bottom-bar {
+  display: none;
+}
+
+body:has(.modal-overlay) .gnb-container,
+body:has(.modal-overlay) .top-btn-container {
+  display: none;
+}
+
+.picker-modal {
+  background: #080808;
+  border-radius: 20px 20px 0 0; /* 상단만 라운드 */
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 430px;
+  margin-bottom: 0; /* 하단에 붙이기 */
+}
+
+/* 모달이 열렸을 때 버튼들 숨기기 */
+.races-page:has(.modal-overlay) .scroll-top-btn,
+.races-page:has(.modal-overlay) .bottom-bar {
+  display: none;
+}
+
+.picker-container {
+  position: relative;
+  height: 250px;
+  margin-top: 20px;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
+}
+
+.selection-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.picker-column {
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.picker-column::-webkit-scrollbar {
+  display: none;
+}
+
+.picker-scroll {
+  display: flex;
+  flex-direction: column;
+}
+
+.spacer {
+  height: 95px;
+}
+
+.picker-item {
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  color: #ffffff;
+  opacity: 0.2;
+  transition: opacity 0.3s transform 0.3s;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.picker-item.active {
+  opacity: 1;
+  color: #eaeaea;
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+.select-complete-btn {
+  width: 90%;
+  height: 60px;
+  background-color: #CD1C10;
+  color: #eaeaea;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.main-title {
+  font-family: var(--font-title);
+  font-size: 44px;
+  line-height: 1;
+  margin: 40px 0;
+  letter-spacing: 1px;
+}
+
+/* 팀 카드 레이아웃 */
+.standings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.team-card {
+  position: relative;
+  border-radius: 5px;
+  padding: 20px;
+  overflow: hidden;
+  min-height: 290px;
+  
+  /* 배경 이미지 설정 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.team-card:hover {
+  transform: scale(1.02);
+}
+
+/* Position별 그라데이션 테두리 */
+.team-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 5px;
+  padding: 2px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* pos1 - McLaren (255,135,44) */
+.team-card:nth-child(1)::before {
+  background: linear-gradient(-57deg,
+    rgba(255,135,44,0) 0%, 
+    rgba(255,135,44,0.3) 40%, 
+    rgba(255,135,44,0.8) 50%, 
+    rgba(255,135,44,0.3) 60%, 
+    rgba(255,135,44,0) 100%);
+}
+
+/* pos2 - Mercedes (72,215,231) */
+.team-card:nth-child(2)::before {
+  background: linear-gradient(-57deg,
+    rgba(72,215,231,0) 0%, 
+    rgba(72,215,231,0.3) 40%, 
+    rgba(72,215,231,0.8) 50%, 
+    rgba(72,215,231,0.3) 60%, 
+    rgba(72,215,231,0) 100%);
+}
+
+/* pos3 - Red Bull (57,74,150) */
+.team-card:nth-child(3)::before {
+  background: linear-gradient(-57deg,
+    rgba(57,74,150,0) 0%, 
+    rgba(57,74,150,0.3) 40%, 
+    rgba(57,74,150,0.8) 50%, 
+    rgba(57,74,150,0.3) 60%, 
+    rgba(57,74,150,0) 100%);
+}
+
+/* pos4 - Ferrari (137,52,63) */
+.team-card:nth-child(4)::before {
+  background: linear-gradient(-57deg,
+    rgba(137,52,63,0) 0%, 
+    rgba(137,52,63,0.3) 40%, 
+    rgba(137,52,63,0.8) 50%, 
+    rgba(137,52,63,0.3) 60%, 
+    rgba(137,52,63,0) 100%);
+}
+
+/* pos5 - Williams (99,137,249) */
+.team-card:nth-child(5)::before {
+  background: linear-gradient(-57deg,
+    rgba(99,137,249,0) 0%, 
+    rgba(99,137,249,0.3) 40%, 
+    rgba(99,137,249,0.8) 50%, 
+    rgba(99,137,249,0.3) 60%, 
+    rgba(99,137,249,0) 100%);
+}
+
+/* pos6 - Racing Bulls (215,221,236) */
+.team-card:nth-child(6)::before {
+  background: linear-gradient(-57deg,
+    rgba(215,221,236,0) 0%, 
+    rgba(215,221,236,0.3) 40%, 
+    rgba(215,221,236,0.8) 50%, 
+    rgba(215,221,236,0.3) 60%, 
+    rgba(215,221,236,0) 100%);
+}
+
+/* pos7 - Aston Martin (22,177,172) */
+.team-card:nth-child(7)::before {
+  background: linear-gradient(-58deg,
+    rgba(22,177,172,0) 0%, 
+    rgba(22,177,172,0.8) 40%, 
+    rgba(22,177,172,0.3) 50%, 
+    rgba(22,177,172,0.3) 60%, 
+    rgba(22,177,172,0) 100%);
+}
+
+/* pos8 - Haas (167,169,173) */
+.team-card:nth-child(8)::before {
+  background: linear-gradient(-57deg,
+    rgba(167,169,173,0) 0%, 
+    rgba(167,169,173,0.3) 40%, 
+    rgba(167,169,173,0.8) 50%, 
+    rgba(167,169,173,0.3) 60%, 
+    rgba(167,169,173,0) 100%);
+}
+
+/* pos9 - Kick Sauber (29,132,30) */
+.team-card:nth-child(9)::before {
+  background: linear-gradient(-57deg,
+    rgba(29,132,30,0) 0%, 
+    rgba(29,132,30,0.3) 40%, 
+    rgba(29,132,30,0.8) 50%, 
+    rgba(29,132,30,0.3) 60%, 
+    rgba(29,132,30,0) 100%);
+}
+
+/* pos10 - Alpine (213,81,156) */
+.team-card:nth-child(10)::before {
+  background: linear-gradient(-57deg,
+    rgba(213,81,156,0) 0%, 
+    rgba(213,81,156,0.3) 40%, 
+    rgba(213,81,156,0.8) 50%, 
+    rgba(213,81,156,0.3) 60%, 
+    rgba(213,81,156,0) 100%);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.team-info {
+    margin-top: 22px;
+    width: 35%;
+}
+
+.team-info .position {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-color-line {
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.team-name {
+  font-size: 40px;
+  font-family: var(--font-title);
+  margin-top: -2px;
+  margin-bottom: 15px;
+  line-height: 0.94;
+}
+
+.total-pts {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* 드라이버 정보 */
+.driver-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 17px ;
+  width: 62%;
+}
+
+.driver-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 5px;
+}
+
+.driver-thumb {
+  width: 40px;
+  height: 50px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.driver-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.d-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.d-pts {
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.d-rank {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 0px;
+  min-width: 30px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* 차량 이미지 배치 */
+.car-image {
+  position: absolute;
+  width: 90%;
+  max-width: 365px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+/* 홀수 position - 오른쪽 */
+.car-image.car-right {
+  right: -20px;
+  bottom: 0;
+}
+
+/* 짝수 position - 왼쪽 */
+.car-image.car-left {
+  left: -20px;
+  bottom: 0;
+}

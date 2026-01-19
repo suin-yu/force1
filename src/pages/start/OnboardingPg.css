@@ -1,0 +1,9 @@
+/* src/pages/auth/OnboardingPg.css */
+
+/* 페이지 전체 배경 */
+.onboarding-page {
+  height: 100vh;
+  position: relative;
+  background-color: #080808;
+  overflow: hidden;
+}

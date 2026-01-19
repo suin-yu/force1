@@ -1,0 +1,145 @@
+{
+  "posts": [
+    {
+      "id": "p_0001",
+      "type": "text",
+      "board": "free",
+      "title": "오늘 경기 뭐가 제일 웃겼냐",
+      "content": "난 팀 라디오가 제일 ㅋㅋ",
+      "author": {
+        "id": "u_102",
+        "nickname": "pitlane_99",
+        "avatar": "/img/avatars/u_102.png",
+        "badge": "Ferrari"
+      },
+      "createdAt": "2026-01-14T14:10:00+09:00",
+      "updatedAt": null,
+      "visibility": "public",
+      "tags": ["#f1", "#경기", "#잡담"],
+
+      "media": [],
+      "links": [],
+      "meta": {},
+
+      "stats": { "like": 12, "comment": 4, "view": 231 },
+      "isLiked": false,
+      "isBookmarked": false,
+
+      "comments": [
+        {
+          "id": "c_001",
+          "author": { "id": "u_201", "nickname": "Force_1" },
+          "content": "라디오 인정 ㅋㅋ",
+          "createdAt": "2026-01-14T14:12:00+09:00",
+          "like": 2,
+          "replies": []
+        }
+      ]
+    },
+
+    {
+      "id": "p_0002",
+      "type": "image",
+      "board": "gallery",
+      "title": "굿즈 자랑",
+      "content": "오늘 온 티셔츠 실물 미쳤다",
+      "author": {
+        "id": "u_305",
+        "nickname": "red_car",
+        "avatar": "/img/avatars/u_305.png",
+        "badge": "Ferrari"
+      },
+      "createdAt": "2026-01-14T15:00:00+09:00",
+      "visibility": "public",
+      "tags": ["#굿즈", "#페라리"],
+
+      "media": [
+        { "kind": "image", "url": "/img/posts/p_0002_1.jpg", "ratio": "1:1" },
+        { "kind": "image", "url": "/img/posts/p_0002_2.jpg", "ratio": "4:5" }
+      ],
+      "links": [],
+      "meta": {},
+
+      "stats": { "like": 89, "comment": 21, "view": 1020 },
+      "isLiked": true,
+      "isBookmarked": false,
+      "comments": []
+    },
+
+    {
+      "id": "p_0003",
+      "type": "poll",
+      "board": "vote",
+      "title": "오늘의 드라이버 오브 더 데이",
+      "content": "누가 제일 잘했음?",
+      "author": {
+        "id": "u_777",
+        "nickname": "stint_master",
+        "avatar": "/img/avatars/u_777.png",
+        "badge": "Neutral"
+      },
+      "createdAt": "2026-01-14T18:30:00+09:00",
+      "visibility": "public",
+      "tags": ["#투표", "#DOTD"],
+
+      "media": [],
+      "links": [],
+      "meta": {},
+
+      "poll": {
+        "allowMulti": false,
+        "endsAt": "2026-01-15T18:30:00+09:00",
+        "options": [
+          { "id": "o1", "label": "Leclerc", "count": 132 },
+          { "id": "o2", "label": "Norris", "count": 98 },
+          { "id": "o3", "label": "Verstappen", "count": 210 }
+        ],
+        "userVotedOptionId": "o3"
+      },
+
+      "stats": { "like": 44, "comment": 9, "view": 888 },
+      "isLiked": false,
+      "isBookmarked": false,
+      "comments": []
+    },
+
+    {
+      "id": "p_0004",
+      "type": "trade",
+      "board": "trade",
+      "title": "F1 레고 교환 구해요",
+      "content": "맥라렌/레드불 파츠 교환 원합니다. DM 주세요!",
+      "author": {
+        "id": "u_909",
+        "nickname": "brick_pit",
+        "avatar": "/img/avatars/u_909.png",
+        "badge": "McLaren"
+      },
+      "createdAt": "2026-01-14T20:10:00+09:00",
+      "visibility": "public",
+      "tags": ["#교환", "#레고"],
+
+      "media": [
+        { "kind": "image", "url": "/img/posts/p_0004_1.jpg", "ratio": "4:5" }
+      ],
+      "links": [],
+      "meta": {},
+
+      "trade": {
+        "status": "open",
+        "category": "lego",
+        "want": ["McLaren set 2024", "RedBull minifig"],
+        "have": ["Ferrari set 2023"],
+        "region": "Seoul",
+        "shipping": "both",
+        "price": null,
+        "contact": { "type": "dm", "value": "brick_pit" }
+      },
+
+      "stats": { "like": 7, "comment": 2, "view": 190 },
+      "isLiked": false,
+      "isBookmarked": true,
+      "comments": []
+    }
+  ]
+}
