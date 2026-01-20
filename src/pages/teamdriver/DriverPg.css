@@ -576,6 +576,7 @@ button:focus {
   margin-top: 20px;
   cursor: pointer;
 }
+
 /* 390px 반응형 */
 @media (max-width: 390px) {
   .main-layout {

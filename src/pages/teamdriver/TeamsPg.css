@@ -475,6 +475,7 @@ body:has(.modal-overlay) .top-btn-container {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  padding-left: 20px;
 }
 
 .banner-content span {
@@ -752,6 +753,8 @@ body:has(.modal-overlay) .top-btn-container {
   font-family: "Anton", sans-serif;
   font-size: 90px;
   line-height: 1;
+  letter-spacing: 1px;
+  font-weight: 600;
   color: #eaeaea;
   z-index: 1;
   pointer-events: none;
@@ -1210,3 +1213,4 @@ body:has(.modal-overlay) .top-btn-container {
 .chatbot-btn-container {
   display: none !important;
 }
+

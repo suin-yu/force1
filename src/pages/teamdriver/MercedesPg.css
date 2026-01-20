@@ -1008,7 +1008,7 @@ body:has(.mercedes-container .modal-overlay) .top-btn-container {
 
 .banner-content {
   z-index: 2;
-  padding-left: 40px;
+  padding-left: 20px;
   width: 100%;
 }
 

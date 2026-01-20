@@ -340,6 +340,7 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  padding-left: 20px;
 }
 
 .banner-content span {
