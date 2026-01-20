@@ -284,6 +284,7 @@ button:focus {
 
 .driverlist ul li.mclaren_1 {
   background-image: url("../../assets/img/drivers/mclaren_bg_1.png");
+  overflow: hidden;
 }
 
 .driverlist ul li.mclaren_2 {

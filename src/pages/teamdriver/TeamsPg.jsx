@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./TeamsPg.css";
 import foxVideo from "/src/assets/video/forceforce.mp4";
+import ferrariLogo from "../../assets/img/teams/ferrari_black.png";
 
 const TeamsPg = () => {
   // 배너 슬라이드 상태 관리
@@ -10,6 +11,8 @@ const TeamsPg = () => {
   const [selectedTeam, setSelectedTeam] = useState("Ferrari");
 
   const [isShining, setIsShining] = useState(false);
+  const [showLogo, setShowLogo] = useState(true); // 로고 표시 상태
+  const [logoFadeOut, setLogoFadeOut] = useState(false); // 페이드아웃 애니메이션 상태
 
   // ✨ 피커 스크롤 ref 추가
   const yearScrollRef = useRef(null);
@@ -137,6 +140,24 @@ const TeamsPg = () => {
     return () => clearInterval(timer);
   }, [banners.length]);
 
+  // 로고 페이드아웃 효과
+  useEffect(() => {
+    // 2초 후 페이드아웃 시작
+    const fadeTimer = setTimeout(() => {
+      setLogoFadeOut(true);
+    }, 2000);
+
+    // 3초 후 로고 완전히 제거
+    const removeTimer = setTimeout(() => {
+      setShowLogo(false);
+    }, 3000);
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+  }, []);
+
   // ✨ 스크롤 기반 자동 선택 기능
   useEffect(() => {
     const handleYearScroll = () => {
@@ -154,6 +175,23 @@ const TeamsPg = () => {
       if (years[clampedIndex] !== selectedYear) {
         setSelectedYear(years[clampedIndex]);
       }
+
+      // ✨ border 영역 안에 있는 모든 아이템에 in-border 클래스 추가
+      const items = container.querySelectorAll('.picker-item');
+      const containerRect = container.getBoundingClientRect();
+      const borderTop = containerRect.top + containerRect.height / 2 - 30; // 60px 높이의 절반
+      const borderBottom = containerRect.top + containerRect.height / 2 + 30;
+
+      items.forEach((item) => {
+        const itemRect = item.getBoundingClientRect();
+        const itemCenter = itemRect.top + itemRect.height / 2;
+        
+        if (itemCenter >= borderTop && itemCenter <= borderBottom) {
+          item.classList.add('in-border');
+        } else {
+          item.classList.remove('in-border');
+        }
+      });
     };
 
     const handleTeamScroll = () => {
@@ -170,6 +208,23 @@ const TeamsPg = () => {
       if (teams[clampedIndex] !== selectedTeam) {
         setSelectedTeam(teams[clampedIndex]);
       }
+
+      // ✨ border 영역 안에 있는 모든 아이템에 in-border 클래스 추가
+      const items = container.querySelectorAll('.picker-item');
+      const containerRect = container.getBoundingClientRect();
+      const borderTop = containerRect.top + containerRect.height / 2 - 30; // 60px 높이의 절반
+      const borderBottom = containerRect.top + containerRect.height / 2 + 30;
+
+      items.forEach((item) => {
+        const itemRect = item.getBoundingClientRect();
+        const itemCenter = itemRect.top + itemRect.height / 2;
+        
+        if (itemCenter >= borderTop && itemCenter <= borderBottom) {
+          item.classList.add('in-border');
+        } else {
+          item.classList.remove('in-border');
+        }
+      });
     };
 
     const yearScroll = yearScrollRef.current;
@@ -201,6 +256,16 @@ const TeamsPg = () => {
         const tIdx = teams.indexOf(selectedTeam);
         yearScrollRef.current?.scrollTo({ top: yIdx * ITEM_HEIGHT });
         teamScrollRef.current?.scrollTo({ top: tIdx * ITEM_HEIGHT });
+        
+        // ✨ 초기 border 하이라이트 적용
+        setTimeout(() => {
+          if (yearScrollRef.current) {
+            yearScrollRef.current.dispatchEvent(new Event('scroll'));
+          }
+          if (teamScrollRef.current) {
+            teamScrollRef.current.dispatchEvent(new Event('scroll'));
+          }
+        }, 50);
       }, 10);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -236,6 +301,14 @@ const TeamsPg = () => {
           <source src={foxVideo} type="video/mp4" />
         </video>
         <div className="video-overlay"></div>
+        
+        {/* Ferrari 로고 오버레이 */}
+        {showLogo && (
+          <div className={`ferrari-logo-overlay ${logoFadeOut ? 'fade-out' : ''}`}>
+            <img src={ferrariLogo} alt="Ferrari Logo" />
+          </div>
+        )}
+        
         <div className="teams-footer">
           <div className="stat-group">
             <div className="stat-item">

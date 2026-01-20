@@ -58,6 +58,49 @@
   z-index: 1;
 }
 
+/* Ferrari 로고 오버레이 */
+.ferrari-logo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.ferrari-logo-overlay img {
+  width: 150px;
+  height: auto;
+  opacity: 1;
+}
+
+.ferrari-logo-overlay.fade-out {
+  animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /* 푸터: 영상 내부 하단에 고정 */
 .teams-footer {
   position: absolute;
@@ -254,23 +297,31 @@ body:has(.modal-overlay) .top-btn-container {
   height: 60px;
   line-height: 60px;
   font-size: 18px;
-  color: #ffffff;
+  color: #eaeaea;
   opacity: 0.2;
   /* 기본은 어둡게 */
-  transition: opacity 0.3s transform 0.3s;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  /* 색상/불투명도 변화를 부드럽게 */
   scroll-snap-align: center;
-  scroll-snap-stop: always;
+  /* 스크롤 시 중앙에 딱 붙게 함 */
   width: 100%;
   text-align: center;
   cursor: pointer;
 }
 
-/* 가이드 라인 안에 있는 활성화 상태 */
+/* ✨ border 영역 안에 있는 아이템 */
+.picker-item.in-border {
+  color: #eaeaea;
+  opacity: 0.6;
+}
+
+/* 가이드 라인 안에 있는 활성화 상태 (.active): 불투명하고 굵은 글씨 */
 .picker-item.active {
   opacity: 1;
+  /* 선명하게 바뀜 */
+  font-weight: 700;
+  /* 굵게 바뀜 */
   color: #eaeaea;
-  font-weight: 600;
-  transform: scale(1.05);
 }
 
 /* 선택 완료 버튼 */
