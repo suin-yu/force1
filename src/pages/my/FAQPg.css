@@ -1,0 +1,169 @@
+.faq-page-container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    background-color: #000000;
+    min-height: 100vh;
+    padding: 0 0 100px;
+    font-family: Roboto-Regular;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Header */
+.faq-header {
+    display: flex;
+    align-items: center;
+    padding: 30px 20px 20px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 15px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.faq-title {
+    font-size: 40px;
+    font-weight: 800;
+    font-family: Roboto-Bold;
+    margin: 20px 0 0 0;
+    text-transform: uppercase;
+}
+
+/* Search Bar */
+.faq-search-wrapper {
+    position: relative;
+    padding: 0 20px;
+    margin-bottom: 36px;
+}
+
+.faq-search-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #767676;
+    padding: 12px 40px 12px 8px;
+    color: #767676;
+    font-size: 20px;
+    font-weight: 500;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.faq-search-input::placeholder {
+    color: #666;
+    font-weight: 700;
+}
+
+.search-icon-btn {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Categories */
+.faq-categories {
+    display: flex;
+    gap: 12px;
+    padding: 0 20px;
+    margin-bottom: 66px;
+}
+
+.category-btn {
+    flex: 1;
+    padding: 12px 0;
+    background: linear-gradient(180deg, #333 0%, #222 100%);
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 20%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.1) 80%,
+            rgba(255, 255, 255, 0) 100%) 1;
+    color: #999;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn.active {
+    background: #1a1a1a;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to right,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0.1) 100%) 1;
+    color: #fff;
+}
+
+/* FAQ List */
+.faq-list {
+    padding: 0 20px;
+    margin-bottom: 130px;
+}
+
+.faq-item {
+    position: relative;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 20%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.1) 80%,
+            rgba(255, 255, 255, 0) 100%) 1;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    opacity: 0.8;
+}
+
+.q-text {
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.chevron-icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-item.open .chevron-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 15px 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #aaa;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 15px;
+}
+
+/* Juventus Fans Font Support */
+@font-face {
+    font-family: 'Juventus Fans';
+    src: url('../../assets/fonts/juventus-fans-bold.ttf') format('truetype');
+    font-weight: bold;
+}

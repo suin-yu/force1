@@ -1,0 +1,488 @@
+/* My Page Container */
+.my-page-container {
+    width: 100%;
+    max-width: 430px;
+    background-color: #080808;
+    color: #ffffff;
+    min-height: 100vh;
+    margin: 0 auto;
+    font-family: Roboto-Regular;
+    padding-bottom: 120px;
+    overflow-x: hidden;
+}
+
+/* Header Section */
+.mp-header {
+    width: 100%;
+    height: 687px;
+    padding: 30px 20px 20px;
+    position: relative;
+    background: url('../../assets/img/my/MyPg_1.png') no-repeat center top / cover;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.mp-header.no-bg {
+    background: #000000;
+}
+
+.mp-title {
+    font-size: 40px;
+    font-weight: 800;
+    text-align: left;
+    margin-bottom: 40px;
+    font-family: 'Juventus Fans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 40px;
+}
+
+.profile-img-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    margin-top: 170px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-id {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-handle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Juventus Fans', sans-serif;
+}
+
+.edit-icon-img {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.user-desc {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    margin-top: 5px;
+}
+
+.mp-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 35px;
+}
+
+.stat-divider {
+    width: 2px;
+    height: 40px;
+    background-color: #767676;
+    flex-shrink: 0;
+}
+
+.stat-num {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Juventus Fans', sans-serif;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Juventus Fans', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.bookmark-icon-img {
+    width: 26px;
+    height: 34px;
+    object-fit: contain;
+    margin-bottom: 2px;
+    margin-top: 5px;
+}
+
+/* Section Common */
+.mp-section {
+    padding: 10px 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 40px !important;
+    font-weight: 800;
+    font-family: 'Juventus Fans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.plus-btn {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+/* My Driver Styling */
+.driver-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+}
+
+.driver-list::-webkit-scrollbar {
+    display: none;
+}
+
+.driver-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+    cursor: pointer;
+}
+
+.driver-img-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.driver-item:hover .driver-img-wrapper {
+    border-color: #ff0000;
+}
+
+.driver-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.driver-name {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+}
+
+.add-driver-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.add-driver-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* My Post (Grid) - 교체할 코드 */
+.post-grid {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    /* 열마다 높이가 달라도 위쪽을 기준으로 정렬 */
+}
+
+.post-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    /* 왼쪽과 오른쪽 열의 너비를 1:1로 맞춤 */
+}
+
+.post-item {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+    /* 선택사항: 이미지 모서리 곡률 */
+}
+
+/* [핵심] 이미지의 느낌을 살리기 위해 비율을 새로 조정했습니다 */
+.post-item.post-1 {
+    aspect-ratio: 0.7 / 1;
+}
+
+/* 왼쪽 위: 세로로 긴 포스터 */
+.post-item.post-3 {
+    aspect-ratio: 16 / 9;
+}
+
+/* 왼쪽 아래: 큰 인물 사진 - 세로로 확장 */
+.post-item.post-5 {
+    aspect-ratio: 0.8 / 1;
+}
+
+/* 왼쪽 아래: 큰 인물 사진 */
+
+.post-item.post-2 {
+    aspect-ratio: 1 / 1;
+}
+
+/* 오른쪽 위: 정사각형 클로즈업 */
+.post-item.post-4 {
+    aspect-ratio: 0.75 / 1;
+}
+
+/* 오른쪽 중간: 헬멧 쓴 인물 */
+.post-item.post-6 {
+    aspect-ratio: 1 / 1;
+}
+
+/* 오른쪽 아래: 관중석 사진 */
+
+.post-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* My Shorts */
+.shorts-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: none;
+    user-select: none;
+    cursor: grab;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.shorts-container.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.shorts-container:active {
+    cursor: grabbing;
+}
+
+.shorts-container::-webkit-scrollbar {
+    display: none;
+}
+
+.shorts-card {
+    min-width: 263px;
+    width: 263px;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+.shorts-thumbnail {
+    width: 100%;
+    height: 340px;
+    position: relative;
+}
+
+.shorts-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.shorts-info {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.shorts-desc {
+    font-family: Roboto-Regular;
+    font-size: 18px;
+    color: #ffffff;
+    margin: 0px auto 0;
+    font-weight: 400;
+    width: 80%;
+}
+
+/* My Comments */
+.comment-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 20px;
+    align-items: flex-start;
+}
+
+.comment-profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.comment-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #ddd;
+    margin-bottom: 0;
+    word-break: break-word;
+}
+
+.comment-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: #888;
+}
+
+.comment-meta span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    width: 45px;
+}
+
+.meta-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0.7);
+    display: block;
+    margin: 0;
+}
+
+/* Utility Menu */
+.utility-menu {
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.menu-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 20px;
+    margin-bottom: 15px;
+    background-color: #0F0F0F;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    padding: 1px;
+    background: linear-gradient(-35deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 30%,
+            rgba(255, 255, 255, 0.3) 40%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0.1) 60%,
+            rgba(255, 255, 255, 0) 90%,
+            rgba(255, 255, 255, 0) 100%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.menu-item:hover {
+    background-color: #1A1A1A;
+}
+
+.menu-arrow {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+    filter: brightness(1);
+    /* 화살표가 선명하게 보이도록 */
+}
