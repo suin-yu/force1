@@ -5,8 +5,8 @@ import "./VoteResultPg.css";
 // Import images
 import maxProfile from "../../assets/img/community/vote/max_profile.png";
 import maxP1 from "../../assets/img/community/vote/max_p1.png";
-import maxMark01 from "../../assets/img/community/vote/max_mark_01.png";
 import maxMark02 from "../../assets/img/community/vote/max_mark_02.png";
+import maxBar from "../../assets/img/community/vote/max_bar.png";
 
 // Import ranking images
 import rank02 from "../../assets/img/community/vote/rank02.png";
@@ -62,6 +62,9 @@ const VoteResultPg = () => {
             {/* 1위 선수 섹션 */}
             <section className="first-place-section">
                 <div className="first-place-card">
+                    {/* Voting Status 헤더 */}
+                    <h1 className="voting-status-header">Voting Status</h1>
+
                     {/* P1 아이콘 */}
                     <img src={maxP1} alt="P1" className="p1-icon" />
 
@@ -70,12 +73,20 @@ const VoteResultPg = () => {
                         <div className="name-line">
                             <span className="first-place-name">Max</span>
                             <div className="marks-inline">
-                                <img src={maxMark01} alt="Country" className="mark-icon-country" />
                                 <img src={maxMark02} alt="Team" className="mark-icon-team" />
                             </div>
                         </div>
                         <div className="surname-line">
                             <span className="first-place-name">Verstappen</span>
+                        </div>
+
+                        {/* 투표율 표시 */}
+                        <div className="first-place-vote">
+                            <img src={maxBar} alt="Vote bar" className="first-place-bar" />
+                            <p className="first-place-percentage">
+                                <span className="percentage-number">41.5</span>
+                                <span className="percentage-symbol">%</span>
+                            </p>
                         </div>
                     </div>
 
@@ -115,7 +126,7 @@ const VoteResultPg = () => {
             <div className="bottom-action-area">
                 <button
                     className="vote-action-button"
-                    onClick={() => navigate('/community')}
+                    onClick={() => navigate('/community', { state: { tab: 'post' } })}
                 >
                     Post 둘러보기
                 </button>

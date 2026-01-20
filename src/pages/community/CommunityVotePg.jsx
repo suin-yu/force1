@@ -28,6 +28,9 @@ const CommunityVotePg = () => {
               <br />
               of this season
             </h2>
+            <p className="vote-period-text">
+              투표기간: 2026년 1월 14일 - 3월 14일
+            </p>
           </div>
         </div>
       </main>

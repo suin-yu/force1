@@ -30,8 +30,7 @@
     /* 모서리 살짝 둥글게 */
     overflow: hidden;
     margin-bottom: 20px;
-    border: 1px solid #333;
-    /* 이미지 외곽선 (선택사항) */
+
 }
 
 .card-image {
@@ -46,9 +45,9 @@
 /* 텍스트 오버레이 위치 잡기 */
 .card-overlay {
     position: absolute;
-    bottom: 20px;
-    /* 아래에서 20px 띄움 */
-    left: 20px;
+    bottom: 30px;
+    /* 아래에서 30px 띄움 */
+    right: 20px;
     /* 왼쪽에서 20px 띄움 */
     z-index: 10;
 }
@@ -57,10 +56,6 @@
     /* 1. 폰트 적용 (아까 설정한 것) */
     font-family: "Juventus Fans", sans-serif;
 
-    /* 2. 그라데이션 배경 설정 
-        - 각도: 155deg
-        - 색상 Stops: 0%(흰색), 32%(중간색), 100%(끝색)
-    */
     background: linear-gradient(-155deg,
             #ffffff 0%,
             #DEDFCE 32%,
@@ -69,10 +64,25 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-size: 32px;
-    line-height: 1.2;
+    font-size: 36px;
+    text-align: right;
+    letter-spacing: -0.02em;
+    line-height: 100%;
     margin: 0;
     font-weight: normal;
+}
+
+.vote-period-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    /* medium */
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    /* -2% */
+    color: #767676;
+    text-align: right;
+    margin: 10px 0 0 0;
 }
 
 /* --- 3. 하단 버튼 스타일 --- */
