@@ -29,7 +29,7 @@ button:focus {
 /* layout */
 .content-area {
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 }
 
 .content-area .button {
@@ -575,4 +575,64 @@ button:focus {
   font-weight: bold;
   margin-top: 20px;
   cursor: pointer;
+}
+/* 390px 반응형 */
+@media (max-width: 390px) {
+  .main-layout {
+    width: 100%;
+    max-width: 390px;
+  }
+
+  .content-area {
+    width: 92%;
+  }
+
+  .content-area h2 {
+    font-size: 38px;
+    margin: 45px 0 60px 0;
+  }
+
+  .driverlist ul li {
+    width: 100%;
+    max-width: 360px;
+    height: 195px;
+    overflow: hidden; /* 이미지가 영역 밖으로 나가지 않도록 */
+  }
+
+  /* 홀수 (오른쪽 이미지) - 이미지 영역 축소 */
+  .driverlist ul li:nth-child(odd) .driver-info .driver-img {
+    width: 50%;
+    flex-shrink: 0;
+  }
+
+  /* 짝수 (왼쪽 이미지) - 이미지 영역 축소 */
+  .driverlist ul li:nth-child(even) .driver-info .driver-img {
+    width: 50%;
+    flex-shrink: 0;
+  }
+
+  /* 이미지 크기 조정 */
+  .driver-img img {
+    margin-top: 53px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .driverlist .driver-info .text-box h3 {
+    font-size: 32px;
+  }
+
+  .driverlist .driver-info .text-box p {
+    font-size: 13px;
+  }
+
+  .tab-item {
+    font-size: 22px;
+  }
+}
+
+/* Chatbot 숨기기 */
+.main-layout .chatbot-btn-container,
+.chatbot-btn-container {
+  display: none !important;
 }

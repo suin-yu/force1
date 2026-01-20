@@ -352,11 +352,13 @@ body:has(.modal-overlay) .top-btn-container {
 
 /* --- Team Intro Section --- */
 .team-intro-section {
-  padding: 60px 20px;
+  padding: 60px 20px 100px;
   background-color: #080808;
   display: flex;
   flex-direction: column;
   gap: 70px;
+  margin-top: -5px;
+  z-index: 1;
 }
 
 /* 팀 슬로건 */
@@ -1158,4 +1160,53 @@ body:has(.modal-overlay) .top-btn-container {
   margin-top: 10px;
   margin-right: 8px;
   text-align: right;
+}
+
+/* 390px 반응형 */
+@media (max-width: 390px) {
+  .teams-page-content {
+    max-width: 390px;
+  }
+
+  .teams-view {
+    height: 650px;
+  }
+
+  .slogan-text {
+    font-size: 38px;
+  }
+
+  .section-title {
+    font-size: 38px;
+  }
+
+  .team-name {
+    font-size: 35px;
+  }
+
+  .banner-content h3.banner-title {
+    font-size: 30px;
+  }
+
+  .driver-card {
+    padding: 8px;
+  }
+
+  .outline-text {
+    font-size: 80px;
+  }
+  .banner-content {margin-left: 20px;}
+  .frederic-set .outline-text {left: 16px;}
+  .frederic-set .main-staff {right: 16px;}
+  .enrico-set .outline-text {right: 48px;}
+  .enrico-set .main-staff {left: 34px;}
+  .loic-set .outline-text {left: 16px;}
+  .loic-set .main-staff {right: 16px;}
+  .team-info-grid {column-gap: 10px;}
+}
+
+/* Chatbot 숨기기 */
+.teams-page .chatbot-btn-container,
+.chatbot-btn-container {
+  display: none !important;
 }

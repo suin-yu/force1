@@ -101,3 +101,24 @@
   font-size: 32px;
   margin-bottom: 24px;
 }
+
+/* 390px 반응형 */
+@media (max-width: 390px) {
+  .main-layout {
+    width: 100%;
+    max-width: 390px;
+  }
+
+  .tab-item {
+    font-size: 22px;
+  }
+
+  .placeholder-screen h2 {
+    font-size: 28px;
+  }
+}
+
+/* Chatbot 숨기기 */
+.chatbot-btn-container {
+  display: none !important;
+}
