@@ -170,37 +170,20 @@ const Races = () => {
     },
   ];
 
-  // 스크롤 기반 자동 선택 기능
-  useEffect(() => {
-    const handleYearScroll = () => {
-      if (!yearScrollRef.current) return;
-      
-      const container = yearScrollRef.current;
-      const scrollTop = container.scrollTop;
-      const itemHeight = 60;
-      const centerOffset = 95;
-      
-      const centerIndex = Math.round((scrollTop + centerOffset) / itemHeight);
-      const clampedIndex = Math.max(0, Math.min(centerIndex, years.length - 1));
-      
-      if (years[clampedIndex] !== selectedYear) {
-        setSelectedYear(years[clampedIndex]);
-      }
-    };
-
-    const yearScroll = yearScrollRef.current;
-
-    if (yearScroll) {
-      yearScroll.addEventListener('scroll', handleYearScroll);
+  // 스크롤 핸들러
+  const handleScroll = (e, items, setter) => {
+    const scrollContainer = e.target;
+    const itemHeight = 60; // picker-item 한 칸의 높이 (CSS와 일치해야 함)
+    const scrollPos = scrollContainer.scrollTop;
+    
+    // 현재 스크롤 위치를 아이템 높이로 나누어 몇 번째 아이템인지 인덱스 계산
+    const index = Math.round(scrollPos / itemHeight);
+    
+    // 계산된 인덱스의 아이템으로 상태(State)를 변경
+    if (items[index] && items[index] !== selectedYear) {
+      setter(items[index]);
     }
-
-    return () => {
-      if (yearScroll) {
-        yearScroll.removeEventListener('scroll', handleYearScroll);
-      }
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedYear]);
+  };
 
   // 모달이 열릴 때 현재 선택된 값으로 스크롤 위치 맞추기
   useEffect(() => {
@@ -283,7 +266,7 @@ const Races = () => {
           <div className="picker-modal" onClick={(e) => e.stopPropagation()}>
             <div className="picker-container">
               <div className="selection-indicator"></div>
-              <div className="picker-column" ref={yearScrollRef}>
+              <div className="picker-column" ref={yearScrollRef} onScroll={(e) => handleScroll(e, years, setSelectedYear)}>
                 <div className="picker-scroll">
                   <div className="spacer" />
                   {years.map((year) => (
@@ -295,7 +278,7 @@ const Races = () => {
                         yearScrollRef.current.scrollTo({ top: idx * ITEM_HEIGHT, behavior: 'smooth' });
                       }}
                     >
-                      <span className="picker-text">{year}</span>
+                      {year}
                     </div>
                   ))}
                   <div className="spacer" />

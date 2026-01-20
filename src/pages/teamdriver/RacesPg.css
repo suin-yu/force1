@@ -169,25 +169,25 @@ body:has(.modal-overlay) .top-btn-container {
   height: 95px;
 }
 
+/* 기본 상태: 반투명하고 얇은 글씨 */
 .picker-item {
   height: 60px;
   line-height: 60px;
-  font-size: 18px;
-  color: #ffffff;
-  opacity: 0.2;
-  transition: opacity 0.3s transform 0.3s;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
+  font-size: 20px;
+  color: #eaeaea;
+  opacity: 0.2; /* 비활성 상태는 흐릿하게 */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* 색상/불투명도 변화를 부드럽게 */
+  scroll-snap-align: center; /* 스크롤 시 중앙에 딱 붙게 함 */
   width: 100%;
   text-align: center;
   cursor: pointer;
 }
 
+/* 활성 상태 (.active): 불투명하고 굵은 글씨 */
 .picker-item.active {
-  opacity: 1;
+  opacity: 1;      /* 선명하게 바뀜 */
+  font-weight: 700; /* 굵게 바뀜 */
   color: #eaeaea;
-  font-weight: 600;
-  transform: scale(1.05);
 }
 
 .select-complete-btn {

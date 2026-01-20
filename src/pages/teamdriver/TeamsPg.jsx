@@ -158,95 +158,20 @@ const TeamsPg = () => {
     };
   }, []);
 
-  // ✨ 스크롤 기반 자동 선택 기능
-  useEffect(() => {
-    const handleYearScroll = () => {
-      if (!yearScrollRef.current) return;
-
-      const container = yearScrollRef.current;
-      const scrollTop = container.scrollTop;
-      const itemHeight = 60; // picker-item 높이
-      const centerOffset = 95; // spacer 높이
-
-      // 중앙에 위치한 아이템 인덱스 계산
-      const centerIndex = Math.round((scrollTop + centerOffset) / itemHeight);
-      const clampedIndex = Math.max(0, Math.min(centerIndex, years.length - 1));
-
-      if (years[clampedIndex] !== selectedYear) {
-        setSelectedYear(years[clampedIndex]);
-      }
-
-      // ✨ border 영역 안에 있는 모든 아이템에 in-border 클래스 추가
-      const items = container.querySelectorAll('.picker-item');
-      const containerRect = container.getBoundingClientRect();
-      const borderTop = containerRect.top + containerRect.height / 2 - 30; // 60px 높이의 절반
-      const borderBottom = containerRect.top + containerRect.height / 2 + 30;
-
-      items.forEach((item) => {
-        const itemRect = item.getBoundingClientRect();
-        const itemCenter = itemRect.top + itemRect.height / 2;
-        
-        if (itemCenter >= borderTop && itemCenter <= borderBottom) {
-          item.classList.add('in-border');
-        } else {
-          item.classList.remove('in-border');
-        }
-      });
-    };
-
-    const handleTeamScroll = () => {
-      if (!teamScrollRef.current) return;
-
-      const container = teamScrollRef.current;
-      const scrollTop = container.scrollTop;
-      const itemHeight = 60;
-      const centerOffset = 95;
-
-      const centerIndex = Math.round((scrollTop + centerOffset) / itemHeight);
-      const clampedIndex = Math.max(0, Math.min(centerIndex, teams.length - 1));
-
-      if (teams[clampedIndex] !== selectedTeam) {
-        setSelectedTeam(teams[clampedIndex]);
-      }
-
-      // ✨ border 영역 안에 있는 모든 아이템에 in-border 클래스 추가
-      const items = container.querySelectorAll('.picker-item');
-      const containerRect = container.getBoundingClientRect();
-      const borderTop = containerRect.top + containerRect.height / 2 - 30; // 60px 높이의 절반
-      const borderBottom = containerRect.top + containerRect.height / 2 + 30;
-
-      items.forEach((item) => {
-        const itemRect = item.getBoundingClientRect();
-        const itemCenter = itemRect.top + itemRect.height / 2;
-        
-        if (itemCenter >= borderTop && itemCenter <= borderBottom) {
-          item.classList.add('in-border');
-        } else {
-          item.classList.remove('in-border');
-        }
-      });
-    };
-
-    const yearScroll = yearScrollRef.current;
-    const teamScroll = teamScrollRef.current;
-
-    if (yearScroll) {
-      yearScroll.addEventListener('scroll', handleYearScroll);
+  // 스크롤 핸들러
+  const handleScroll = (e, items, setter) => {
+    const scrollContainer = e.target;
+    const itemHeight = 60; // picker-item 한 칸의 높이 (CSS와 일치해야 함)
+    const scrollPos = scrollContainer.scrollTop;
+    
+    // 현재 스크롤 위치를 아이템 높이로 나누어 몇 번째 아이템인지 인덱스 계산
+    const index = Math.round(scrollPos / itemHeight);
+    
+    // 계산된 인덱스의 아이템으로 상태(State)를 변경
+    if (items[index] && items[index] !== (setter === setSelectedYear ? selectedYear : selectedTeam)) {
+      setter(items[index]);
     }
-    if (teamScroll) {
-      teamScroll.addEventListener('scroll', handleTeamScroll);
-    }
-
-    return () => {
-      if (yearScroll) {
-        yearScroll.removeEventListener('scroll', handleYearScroll);
-      }
-      if (teamScroll) {
-        teamScroll.removeEventListener('scroll', handleTeamScroll);
-      }
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedYear, selectedTeam]);
+  };
 
   // 모달이 열릴 때 현재 선택된 값으로 스크롤 위치 맞추기
   useEffect(() => {
@@ -256,16 +181,6 @@ const TeamsPg = () => {
         const tIdx = teams.indexOf(selectedTeam);
         yearScrollRef.current?.scrollTo({ top: yIdx * ITEM_HEIGHT });
         teamScrollRef.current?.scrollTo({ top: tIdx * ITEM_HEIGHT });
-        
-        // ✨ 초기 border 하이라이트 적용
-        setTimeout(() => {
-          if (yearScrollRef.current) {
-            yearScrollRef.current.dispatchEvent(new Event('scroll'));
-          }
-          if (teamScrollRef.current) {
-            teamScrollRef.current.dispatchEvent(new Event('scroll'));
-          }
-        }, 50);
       }, 10);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -709,7 +624,7 @@ const TeamsPg = () => {
           <div className="picker-modal" onClick={(e) => e.stopPropagation()}>
             <div className="picker-container">
               <div className="selection-indicator"></div>
-              <div className="picker-column" ref={yearScrollRef}>
+              <div className="picker-column" ref={yearScrollRef} onScroll={(e) => handleScroll(e, years, setSelectedYear)}>
                 <div className="picker-scroll">
                   <div className="spacer" />
                   {years.map((year) => (
@@ -722,15 +637,13 @@ const TeamsPg = () => {
                         yearScrollRef.current.scrollTo({ top: idx * ITEM_HEIGHT, behavior: 'smooth' });
                       }}
                     >
-                      <span className="picker-text">{year}</span>
-                      {/* 선택된 항목에만 회전하는 빛 모션 추가 */}
-                      {selectedYear === year && <div className="motion-only-layer"></div>}
+                      {year}
                     </div>
                   ))}
                   <div className="spacer" />
                 </div>
               </div>
-              <div className="picker-column" ref={teamScrollRef}>
+              <div className="picker-column" ref={teamScrollRef} onScroll={(e) => handleScroll(e, teams, setSelectedTeam)}>
                 <div className="picker-scroll">
                   <div className="spacer" />
                   {teams.map((team) => (
