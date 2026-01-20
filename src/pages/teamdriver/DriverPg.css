@@ -284,6 +284,7 @@ button:focus {
 
 .driverlist ul li.mclaren_1 {
   background-image: url("../../assets/img/drivers/mclaren_bg_1.png");
+  overflow: hidden;
 }
 
 .driverlist ul li.mclaren_2 {
@@ -510,9 +511,9 @@ button:focus {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  height: 45px;
-  border-top: 1px solid #eaeaea;
-  border-bottom: 1px solid #eaeaea;
+  height: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   pointer-events: none;
   z-index: 2;
 }
@@ -537,29 +538,27 @@ button:focus {
 }
 
 .spacer {
-  height: 100px;
+  height: 95px;
 }
 
-/* 각 항목 스타일 */
+/* 기본 상태: 반투명하고 얇은 글씨 */
 .picker-item {
-  height: 45px;
-  line-height: 45px;
+  height: 60px;
+  line-height: 60px;
   font-size: 20px;
   color: #eaeaea;
-  opacity: 0.2;
-  /* 가시성 대비를 위해 더 낮춤 */
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  scroll-snap-align: center;
+  opacity: 0.2; /* 비활성 상태는 흐릿하게 */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* 색상/불투명도 변화를 부드럽게 */
+  scroll-snap-align: center; /* 스크롤 시 중앙에 딱 붙게 함 */
   width: 100%;
   text-align: center;
   cursor: pointer;
 }
 
-/* 활성화 상태 */
+/* 활성 상태 (.active): 불투명하고 굵은 글씨 */
 .picker-item.active {
-  opacity: 1;
-  font-weight: 700;
-  font-size: 20px;
+  opacity: 1;      /* 선명하게 바뀜 */
+  font-weight: 700; /* 굵게 바뀜 */
   color: #eaeaea;
 }
 

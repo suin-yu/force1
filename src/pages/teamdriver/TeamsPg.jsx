@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./TeamsPg.css";
 import foxVideo from "/src/assets/video/forceforce.mp4";
+import ferrariLogo from "../../assets/img/teams/ferrari_black.png";
 
 const TeamsPg = () => {
   // 배너 슬라이드 상태 관리
@@ -10,6 +11,8 @@ const TeamsPg = () => {
   const [selectedTeam, setSelectedTeam] = useState("Ferrari");
 
   const [isShining, setIsShining] = useState(false);
+  const [showLogo, setShowLogo] = useState(true); // 로고 표시 상태
+  const [logoFadeOut, setLogoFadeOut] = useState(false); // 페이드아웃 애니메이션 상태
 
   // ✨ 피커 스크롤 ref 추가
   const yearScrollRef = useRef(null);
@@ -137,61 +140,38 @@ const TeamsPg = () => {
     return () => clearInterval(timer);
   }, [banners.length]);
 
-  // ✨ 스크롤 기반 자동 선택 기능
+  // 로고 페이드아웃 효과
   useEffect(() => {
-    const handleYearScroll = () => {
-      if (!yearScrollRef.current) return;
+    // 2초 후 페이드아웃 시작
+    const fadeTimer = setTimeout(() => {
+      setLogoFadeOut(true);
+    }, 2000);
 
-      const container = yearScrollRef.current;
-      const scrollTop = container.scrollTop;
-      const itemHeight = 60; // picker-item 높이
-      const centerOffset = 95; // spacer 높이
-
-      // 중앙에 위치한 아이템 인덱스 계산
-      const centerIndex = Math.round((scrollTop + centerOffset) / itemHeight);
-      const clampedIndex = Math.max(0, Math.min(centerIndex, years.length - 1));
-
-      if (years[clampedIndex] !== selectedYear) {
-        setSelectedYear(years[clampedIndex]);
-      }
-    };
-
-    const handleTeamScroll = () => {
-      if (!teamScrollRef.current) return;
-
-      const container = teamScrollRef.current;
-      const scrollTop = container.scrollTop;
-      const itemHeight = 60;
-      const centerOffset = 95;
-
-      const centerIndex = Math.round((scrollTop + centerOffset) / itemHeight);
-      const clampedIndex = Math.max(0, Math.min(centerIndex, teams.length - 1));
-
-      if (teams[clampedIndex] !== selectedTeam) {
-        setSelectedTeam(teams[clampedIndex]);
-      }
-    };
-
-    const yearScroll = yearScrollRef.current;
-    const teamScroll = teamScrollRef.current;
-
-    if (yearScroll) {
-      yearScroll.addEventListener('scroll', handleYearScroll);
-    }
-    if (teamScroll) {
-      teamScroll.addEventListener('scroll', handleTeamScroll);
-    }
+    // 3초 후 로고 완전히 제거
+    const removeTimer = setTimeout(() => {
+      setShowLogo(false);
+    }, 3000);
 
     return () => {
-      if (yearScroll) {
-        yearScroll.removeEventListener('scroll', handleYearScroll);
-      }
-      if (teamScroll) {
-        teamScroll.removeEventListener('scroll', handleTeamScroll);
-      }
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedYear, selectedTeam]);
+  }, []);
+
+  // 스크롤 핸들러
+  const handleScroll = (e, items, setter) => {
+    const scrollContainer = e.target;
+    const itemHeight = 60; // picker-item 한 칸의 높이 (CSS와 일치해야 함)
+    const scrollPos = scrollContainer.scrollTop;
+    
+    // 현재 스크롤 위치를 아이템 높이로 나누어 몇 번째 아이템인지 인덱스 계산
+    const index = Math.round(scrollPos / itemHeight);
+    
+    // 계산된 인덱스의 아이템으로 상태(State)를 변경
+    if (items[index] && items[index] !== (setter === setSelectedYear ? selectedYear : selectedTeam)) {
+      setter(items[index]);
+    }
+  };
 
   // 모달이 열릴 때 현재 선택된 값으로 스크롤 위치 맞추기
   useEffect(() => {
@@ -236,6 +216,14 @@ const TeamsPg = () => {
           <source src={foxVideo} type="video/mp4" />
         </video>
         <div className="video-overlay"></div>
+        
+        {/* Ferrari 로고 오버레이 */}
+        {showLogo && (
+          <div className={`ferrari-logo-overlay ${logoFadeOut ? 'fade-out' : ''}`}>
+            <img src={ferrariLogo} alt="Ferrari Logo" />
+          </div>
+        )}
+        
         <div className="teams-footer">
           <div className="stat-group">
             <div className="stat-item">
@@ -636,7 +624,7 @@ const TeamsPg = () => {
           <div className="picker-modal" onClick={(e) => e.stopPropagation()}>
             <div className="picker-container">
               <div className="selection-indicator"></div>
-              <div className="picker-column" ref={yearScrollRef}>
+              <div className="picker-column" ref={yearScrollRef} onScroll={(e) => handleScroll(e, years, setSelectedYear)}>
                 <div className="picker-scroll">
                   <div className="spacer" />
                   {years.map((year) => (
@@ -649,15 +637,13 @@ const TeamsPg = () => {
                         yearScrollRef.current.scrollTo({ top: idx * ITEM_HEIGHT, behavior: 'smooth' });
                       }}
                     >
-                      <span className="picker-text">{year}</span>
-                      {/* 선택된 항목에만 회전하는 빛 모션 추가 */}
-                      {selectedYear === year && <div className="motion-only-layer"></div>}
+                      {year}
                     </div>
                   ))}
                   <div className="spacer" />
                 </div>
               </div>
-              <div className="picker-column" ref={teamScrollRef}>
+              <div className="picker-column" ref={teamScrollRef} onScroll={(e) => handleScroll(e, teams, setSelectedTeam)}>
                 <div className="picker-scroll">
                   <div className="spacer" />
                   {teams.map((team) => (
